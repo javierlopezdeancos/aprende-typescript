@@ -2,7 +2,7 @@
 
 ![GitHub License](https://img.shields.io/github/license/javierlopezdeancos/aprende-go)
 
-![mascota de golang estudiando](./assets/readme.jpg)
+![perrete cuqui con una gorra de typescript declarando su amor por el](./assets/readme.jpg)
 
 ## Typescript avanzado
 
@@ -35,3 +35,29 @@ type PermissionMap<T> = {
   [P in keyof T]: Permissions;
 };
 ```
+
+Con los Mapped Types, puede generar dinámicamente nuevos tipos basados en los existentes, agregando una capa de flexibilidad y reutilización a nuestras definiciones de tipos.
+
+Para comprender mejor la utilidad de los Mapped Types, consideremos un ejemplo concreto que se encuentra comúnmente en el mundo real del desarrollo.
+
+```typescript
+type ReadonlyObject<T> = {
+  readonly [P in keyof T]: T[P];
+};
+
+interface User {
+  id: number;
+  name: string;
+}
+
+const user: ReadonlyObject<User> = {
+  id: 1,
+  name: 'John Doe',
+};
+
+user.id = 2; // Error: Cannot assign to 'id' because it is a read-only property.
+```
+
+En este ejemplo, `ReadonlyObject<T>` es un tipo mapeado genérico que itera sobre todas las propiedades `P` de un tipo `T` y marca cada propiedad como de solo lectura. Este tipo de utilidad facilita la transformación de cualquier tipo de objeto en su version inmutable.
+
+A continuación, profundicemos en un escenario más avanzado en el que queremos transformar un tipo de objeto cambiando el tipo de sus valores y reasignando sus claves. Este ejemplo es particularmente útil cuando se adaptan interfaces entre diferentes capas de una aplicación (por ejemplo, el backend y el frontend) o cuando se consumen API externas:
