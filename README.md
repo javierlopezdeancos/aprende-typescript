@@ -8,6 +8,12 @@
   - [Typescript avanzado](advanced/advanced.md#typescript-avanzado)
     - [Utility Types](advanced/advanced.md#utility-types)
     - [Mapped Types](advanced/advanced.md#mapped-types)
+  - Principios solid
+    - [Single Responsibility Principle](solid/single-responsibility-principle.md)
+    - [Open/Closed Principle](solid/open-closed-principle.md)
+    - [Liskov Substitution Principle](solid/liskov-substitution-principle.md)
+    - [Interface Segregation Principle](solid/interface-segregation-principle.md)
+    - [Dependency Inversion Principle](solid/dependency-inversion-principle.md)
   - Ejercicios
     - Algorithms
       - Linked List
