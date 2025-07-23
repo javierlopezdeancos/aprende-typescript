@@ -22,16 +22,16 @@
       - [publisher-subscriber](patterns/behavioral/publisher-subscriber.md)
       - [Strategy](patterns/behavioral/strategy.md)
     - Estructurales
-      - [Composite](design-patterns/structural/composite.md)
-      - [Decorator](design-patterns/structural/decorator.md)
-      - [Facade](design-patterns/structural/facade.md)
-      - [Flyweight](design-patterns/structural/flyweight.md)
-      - [Proxy](design-patterns/structural/proxy.md)
+      - [Composite](patterns/structural/composite.md)
+      - [Decorator](patterns/structural/decorator.md)
+      - [Facade](patterns/structural/facade.md)
+      - [Flyweight](patterns/structural/flyweight.md)
+      - [Proxy](patterns/structural/proxy.md)
     - Creacionales
-      - [Builder](design-patterns/creational/builder.md)
-      - [Factory](design-patterns/creational/factory.md)
-      - [Prototype](design-patterns/creational/prototype.md)
-      - [Singleton](design-patterns/creational/singleton.md)
+      - [Builder](patterns/creational/builder.md)
+      - [Factory](patterns/creational/factory.md)
+      - [Prototype](patterns/creational/prototype.md)
+      - [Singleton](patterns/creational/singleton.md)
   - Ejercicios
     - Algorithms
       - Linked List
