@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "commonjs",
+    "target": "es2021",
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "lib": ["es2016", "dom"],
+    "rootDir": "./",
+    "moduleResolution": "node"
+  },
+  "exclude": [
+    "./node_modules/**/*",
+    "./tsconfig.json",
+    "./jest.config.js",
+  ]
+}

@@ -4,60 +4,93 @@
 
 ![perrete cuqui con una gorra de typescript declarando su amor por el](./assets/readme.jpg)
 
-## Typescript avanzado
+- [Aprende typescript en español 🇪🇸](advanced/advanced.md#aprende-typescript-en-espaol)
+  - [Typescript avanzado](advanced/advanced.md#typescript-avanzado)
+    - [Utility Types](advanced/advanced.md#utility-types)
+    - [Mapped Types](advanced/advanced.md#mapped-types)
+  - Ejercicios
+    - Algorithms
+      - Linked List
+        - [Linked list values](exercises/algorithms/linked-list/linked-list-values.md).
+        - [Sum list](exercises/algorithms/linked-list/sum-list.md).
+        - [Get node value](exercises/algorithms/linked-list/get-node-value.md).
+        - [Find target](exercises/algorithms/linked-list/find-target.md).
+        - [Reverse list](exercises/algorithms/linked-list/reverse-list.md).
+        - [Zipper list](exercises/algorithms/linked-list/zipper-lists.md).
+      - Binary tree
+        - [Breadth first values](exercises/algorithms/binary-tree/breadth-first-values.md).
+        - [Depth first values](exercises/algorithms/binary-tree/depth-first-values.md).
+        - [Tree includes](exercises/algorithms/binary-tree/tree-includes.md).
+        - [Tree min value](exercises/algorithms/binary-tree/tree-min-value.md).
+        - [Tree sum](exercises/algorithms/binary-tree/tree-sum.md).
+        - [Tree max path sum](exercises/algorithms/binary-tree/tree-max-path-sum.md).
+        - [Max root to leaf path sum](exercises/algorithms/binary-tree/max-root-to-leaf-path-sum.md).
+      - Graph
+        - [Breadth first values](exercises/algorithms/graph/breadth-first-values.md).
+        - [Build graph by edges](exercises/algorithms/graph/build-graph-by-edges.md).
+        - [Connected components count](exercises/algorithms/graph/connected-components-count.md).
+        - [Has path](exercises/algorithms/graph/has-path.md).
+        - [Depth first values](exercises/algorithms/graph/depth-first-values.md).
+        - [Undirected path](exercises/algorithms/graph/undirected-path.md).
+    - [Coderpad](https://coderpad.io)
+    - [LeetCode](https://leetcode.com)
+      - Algorithms
+        - Easy
+          - [Add array form of integer](exercises/leet-code/algorithms/easy/add-to-array-form-of-integers.md)
+          - [Add binary](exercises/leet-code/algorithms/easy/add-binary.md)
+          - [Plus one](exercises/leet-code/algorithms/easy/plus-one.md)
+          - [Roman to integer](exercises/leet-code/algorithms/easy/roman-to-integer.md)
+        - Medium
+          - [Add two numbers](exercises/leet-code/algorithms/medium/add-two-numbers.md)
+          - [Multiply strings](https://leetcode.com/problems/multiply-strings/)
+          - [Longest substring without repeating characters](exercises/leet-code/algorithms/medium/longest-substring-without-repeating-characters.md)
+    - [HackerRank](https://www.hackerrank.com)
+      - Algorithms
+        - Easy
+          - [A very big sum](exercises/hacker-rank/algorithms/easy/a-very-big-sum.md)
+          - [Birthday cake candles](exercises/hacker-rank/algorithms/easy/birthday-cake-candles.md)
+          - [Breaking the records](exercises/hacker-rank/algorithms/easy/breaking-the-records.md)
+          - [Compare de triplets](exercises/hacker-rank/algorithms/easy/compare-the-triplets.md)
+          - [Diagonal difference](exercises/hacker-rank/algorithms/easy/diagonal-difference.md)
+          - [Mini max sum](exercises/hacker-rank/algorithms/easy/mini-max-sum.md)
+          - [Plus minus](exercises/hacker-rank/algorithms/easy/plus-minus.md)
+          - [Repeated string](exercises/hacker-rank/algorithms/easy/repeated-string.md)
+          - [Simple array sum](exercises/hacker-rank/algorithms/easy/simple-array-sum.md)
+          - [Solve me first](exercises/hacker-rank/algorithms/easy/solve-me-first.md)
+          - [Staircase](exercises/hacker-rank/algorithms/easy/staircase.md)
+          - [Time conversion](exercises/hacker-rank/algorithms/easy/time-conversion.md)
+        - Medium
+          - [Climbing the leaderboard](exercises/hacker-rank/algorithms/medium/climbing-the-leaderboard.md)
+    - Real code interviews
+      - [Count dupes](./src/real-code-interviews/count-dupes.md)
 
-Tener un conocimiento sólido de los conceptos básicos de TypeScript nos permite profundizar en sus capacidades más potentes, que pueden mejorar drásticamente nuestro código. En esta sección exploraremos los **Utility Types**, los **Mapped Types** y los tipos **Conditional Types**, demostrando cómo cada uno puede usarse para crear tipos más flexibles, precisos y expresivos.
+## Instala el entorno
 
-### Utility Types
+Instala las dependencias para ejecutar todos los comandos:
 
-TypeScript viene con varios tipos de utilidades integradas que ayudan a manipular tipos de una forma muy flexible. Así es como funcionan algunos de ellos:
-
-* **`Parcial<T>`** hace que todas las propiedades del tipo `T` sean opcionales. Esto es particularmente útil cuando desea **crear objetos que pueden tener solo un subconjunto de propiedades de un tipo más complejo**.
-
-* **`Readonly<T>`** hace que todas las propiedades del tipo `T` sean de solo lectura. Esta utilidad es excelente para **crear objetos inmutables**, lo que garantiza que una vez creado un objeto, sus propiedades no se puedan cambiar.
-
-* **`Pick<T, K>`** le permite crear un tipo eligiendo el conjunto de propiedades `K` del tipo `T`. Es útil para **crear tipos que solo necesitan unas pocas propiedades de un tipo más grande**.
-
-* **`Record<K, T>`** crea un tipo con un conjunto de propiedades `K` de tipo `T`. Esta utilidad es útil para **crear objetos donde no conoce los nombres de las propiedades** con anticipación pero desea asegurarse de que todos los valores sean de un tipo determinado.
-
-Podemos ver estos y mas Utility Types en la documentación oficial de TypeScript [oficial docs to utility types](https://www.typescriptlang.org/docs/handbook/utility-types.html).
-
-Estos Utility Types te permiten escribir tipos más detallados y específicos con el mínimo esfuerzo, lo que hace que el código sea más sólido y flexible.
-
-### Mapped Types
-
-Los Mapped Types permiten tomar un modelo existente y transformar cada una de sus propiedades en nuevos tipos. Básicamente, te permiten crear nuevos tipos basados en los antiguos aplicando una transformación a cada propiedad. Veamos un ejemplo simple:
-
-```typescript
-type Permissions = 'read' | 'write' | 'delete';
-
-type PermissionMap<T> = {
-  [P in keyof T]: Permissions;
-};
+```bash
+npm i
 ```
 
-Con los Mapped Types, puede generar dinámicamente nuevos tipos basados en los existentes, agregando una capa de flexibilidad y reutilización a nuestras definiciones de tipos.
+## Prueba los ejercicios
 
-Para comprender mejor la utilidad de los Mapped Types, consideremos un ejemplo concreto que se encuentra comúnmente en el mundo real del desarrollo.
+Para comprobar el código fuente de los ejercicios, puedes usar el siguiente comando:
 
-```typescript
-type ReadonlyObject<T> = {
-  readonly [P in keyof T]: T[P];
-};
-
-interface User {
-  id: number;
-  name: string;
-}
-
-const user: ReadonlyObject<User> = {
-  id: 1,
-  name: 'John Doe',
-};
-
-user.id = 2; // Error: Cannot assign to 'id' because it is a read-only property.
+```bash
+npm tests
 ```
 
-En este ejemplo, `ReadonlyObject<T>` es un tipo mapeado genérico que itera sobre todas las propiedades `P` de un tipo `T` y marca cada propiedad como de solo lectura. Este tipo de utilidad facilita la transformación de cualquier tipo de objeto en su version inmutable.
+## Añadir nuevos ejercicios
 
-A continuación, profundicemos en un escenario más avanzado en el que queremos transformar un tipo de objeto cambiando el tipo de sus valores y reasignando sus claves. Este ejemplo es particularmente útil cuando se adaptan interfaces entre diferentes capas de una aplicación (por ejemplo, el backend y el frontend) o cuando se consumen API externas:
+Puedes añadir un nuevo ejercicio con su prueba siguiendo el mismo patrón:
+
+```text
+my-new-exercise-file.ts        // Código fuente del ejercicio
+my-new-exercise-file.test.ts   // Código de prueba del ejercicio
+```
+
+Para escribir el código fuente mientras se ejecutan las pruebas, puedes ejecutar:
+
+```bash
+npm run test:watch
+```
