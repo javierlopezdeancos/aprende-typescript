@@ -9,11 +9,11 @@
     - [Utility Types](advanced/advanced.md#utility-types)
     - [Mapped Types](advanced/advanced.md#mapped-types)
   - Principios solid
-    - [Single Responsibility Principle](solid/s-single-responsibility-principle.md)
-    - [Open/Closed Principle](solid/o-open-closed-principle.md)
-    - [Liskov Substitution Principle](solid/l-liskov-substitution-principle.md)
-    - [Interface Segregation Principle](solid/i-interface-segregation-principle.md)
-    - [Dependency Inversion Principle](solid/d-dependency-inversion-principle.md)
+    - [Single Responsibility Principle](solid/s-single-responsibility.md)
+    - [Open/Closed Principle](solid/o-open-closed.md)
+    - [Liskov Substitution Principle](solid/l-liskov-substitution.md)
+    - [Interface Segregation Principle](solid/i-interface-segregation.md)
+    - [Dependency Inversion Principle](solid/d-dependency-inversion.md)
   - Ejercicios
     - Algorithms
       - Linked List
