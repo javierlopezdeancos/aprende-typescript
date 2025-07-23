@@ -1,4 +1,4 @@
-# Aprende typescript en español 🇪🇸
+# Aprende typescript en castellano 🇪🇸
 
 ![GitHub License](https://img.shields.io/github/license/javierlopezdeancos/aprende-go)
 
