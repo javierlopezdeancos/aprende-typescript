@@ -1,42 +1,42 @@
-# Plus One
+# Más Uno
 
-[Leet Code link](https://leetcode.com/problems/plus-one/)
+[Enlace de Leet Code](https://leetcode.com/problems/plus-one/)
 
-Given a non-empty array of decimal digits representing a non-negative integer, increment one to the integer.
+Dado un array no vacío de dígitos decimales que representan un entero no negativo, incrementa en uno el entero.
 
-The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.
+Los dígitos se almacenan de tal manera que el dígito más significativo está a la cabeza de la lista, y cada elemento del array contiene un solo dígito.
 
-You may assume the integer does not contain any leading zero, except the number 0 itself.
+Puedes asumir que el entero no contiene ningún cero a la izquierda, excepto el número 0.
 
-**Example 1:**
-
-```
-Input: digits = [1,2,3]
-Output: [1,2,4]
-Explanation: The array represents the integer 123
-```
-
-**Example 2:**
+**Ejemplo 1:**
 
 ```
-Input: digits = [4,3,2,1]
-Output: [4,3,2,2]
-Explanation: The array represents the integer 4321.
+Entrada: digitos = [1,2,3]
+Salida: [1,2,4]
+Explicación: El array representa el entero 123
 ```
 
-**Example 3:**
+**Ejemplo 2:**
 
 ```
-Input: digits = [0]
-Output: [1]
+Entrada: digitos = [4,3,2,1]
+Salida: [4,3,2,2]
+Explicación: El array representa el entero 4321.
 ```
 
-**Constraints:**
+**Ejemplo 3:**
+
+```
+Entrada: digitos = [0]
+Salida: [1]
+```
+
+**Restricciones:**
 
 - 1 <= digits.length <= 100
 - 0 <= digits[i] <= 9
 
-**Solution**
+**Solución**
 
-[Source Code](./plusOne.ts)
-[Tests Code](./plusOne.test.ts)
+[Código Fuente](./plusOne.ts)
+[Código de Pruebas](./plusOne.test.ts)

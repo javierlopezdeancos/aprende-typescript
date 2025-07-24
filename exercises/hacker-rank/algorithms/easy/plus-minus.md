@@ -1,46 +1,46 @@
-# Plus Minus
+# Más Menos
 
-Take a look to the complete description of [exercise in HackerRank](https://www.hackerrank.com/challenges/plus-minus)
+Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/plus-minus)
 
-Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with places after the decimal.
+Dado un array de enteros, calcula las proporciones de sus elementos que son positivos, negativos y cero. Imprime el valor decimal de cada fracción en una nueva línea con 6 decimales.
 
-**Note**: This challenge introduces precision problems. The test cases are scaled to six decimal places, though answers with absolute error of up to are acceptable.
+**Nota**: Este desafío introduce problemas de precisión. Los casos de prueba se escalan a seis decimales, aunque se aceptan respuestas con un error absoluto de hasta 10^-4.
 
-## Function Description
+## Descripción de la función
 
-Complete the plusMinus function in the editor below.
+Completa la función `plusMinus` en el editor de abajo.
 
-plusMinus has the following parameter(s):
+`plusMinus` tiene los siguientes parámetros:
 
-- int arr[n]: an array of integers
+- int arr[n]: un array de enteros
 
-## Print
+## Imprimir
 
-Print the ratios of positive, negative and zero values in the array. Each value should be printed on a separate line with digits after the decimal. The function should not return a value.
+Imprime las proporciones de valores positivos, negativos y cero en el array. Cada valor debe imprimirse en una línea separada con 6 dígitos después del decimal. La función no debe devolver un valor.
 
-## Input Format
+## Formato de entrada
 
-The first line contains an integer, , the size of the array.
-The second line contains space-separated integers that describe .
+La primera línea contiene un entero, n, el tamaño del array.
+La segunda línea contiene n enteros separados por espacios que describen el array.
 
-## Output Format
+## Formato de salida
 
-**Print** the following **3** lines, each to **6** decimals:
+**Imprime** las siguientes **3** líneas, cada una con **6** decimales:
 
-1.proportion of positive values
-2.proportion of negative values
-3.proportion of zeros
+1. proporción de valores positivos
+2. proporción de valores negativos
+3. proporción de ceros
 
-## Sample Input
+## Ejemplo de entrada
 
 ```
-STDIN           Function
+STDIN           Función
 -----           --------
-6               arr[] size n = 6
+6               tamaño de arr[] n = 6
 -4 3 -9 0 4 1   arr = [-4, 3, -9, 0, 4, 1]
 ```
 
-## Sample Output
+## Ejemplo de salida
 
 ```
 0.500000
@@ -48,8 +48,8 @@ STDIN           Function
 0.166667
 ```
 
-## Explanation
+## Explicación
 
-There are **3** positive numbers, **2** negative numbers, and **1** zero in the array.
+Hay **3** números positivos, **2** números negativos y **1** cero en el array.
 
-The proportions of occurrence are positive: **3/6=0.500000**, negative:**2/6=0.333333** and zeros: **1/6=0.166667**.
+Las proporciones de aparición son positivas: **3/6=0.500000**, negativas:**2/6=0.333333** y ceros: **1/6=0.166667**.

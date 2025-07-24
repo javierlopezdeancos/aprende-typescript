@@ -1,10 +1,10 @@
-# Diagonal difference
+# Diferencia diagonal
 
-Take a look to the complete description of [exercise in HackerRank](https://www.hackerrank.com/challenges/diagonal-difference)
+Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/diagonal-difference)
 
-Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+Dada una matriz cuadrada, calcula la diferencia absoluta entre las sumas de sus diagonales.
 
-For example, the square matrix `arr` is shown below:
+Por ejemplo, la matriz cuadrada `arr` se muestra a continuación:
 
 ```
 1 2 3
@@ -12,35 +12,35 @@ For example, the square matrix `arr` is shown below:
 9 8 9
 ```
 
-The left-to-right diagonal = **1 + 5 +9 = 15**. The right to left diagonal = **3 + 5 + 9 = 17**. Their absolute difference is **|15 -17| = 2**.
+La diagonal de izquierda a derecha = **1 + 5 + 9 = 15**. La diagonal de derecha a izquierda = **3 + 5 + 9 = 17**. Su diferencia absoluta es **|15 - 17| = 2**.
 
-## Function description
+## Descripción de la función
 
-Complete the `diagonalDifference` function.
+Completa la función `diagonalDifference`.
 
-diagonalDifference takes the following parameter:
+`diagonalDifference` toma el siguiente parámetro:
 
-- int arr[n][m]: an array of integers
+- int arr[n][m]: un array de enteros
 
-### Return
+### Devolución
 
-- int: the absolute diagonal difference
+- int: la diferencia diagonal absoluta
 
-### Input Format
+### Formato de entrada
 
-The first line contains a single integer,`n` , the number of rows and columns in the square matrix `arr`.
+La primera línea contiene un único entero, `n`, el número de filas y columnas de la matriz cuadrada `arr`.
 
-Each of the next `n` lines describes a row, `arr[i]`, and consists of `n` space-separated integers .
+Cada una de las siguientes `n` líneas describe una fila, `arr[i]`, y consta de `n` enteros separados por espacios.
 
-### Constraints
+### Restricciones
 
-- `-100<= arr[i][j] >= 100`
+- `-100 <= arr[i][j] <= 100`
 
-### Output Format
+### Formato de salida
 
-Return the absolute difference between the sums of the matrix's two diagonals as a single integer.
+Devuelve la diferencia absoluta entre las sumas de las dos diagonales de la matriz como un único entero.
 
-### Sample Input
+### Ejemplo de entrada
 
 ```
 3
@@ -49,15 +49,15 @@ Return the absolute difference between the sums of the matrix's two diagonals as
 10 8 -12
 ```
 
-### Sample Output
+### Ejemplo de salida
 
 ```
 15
 ```
 
-### Explanation
+### Explicación
 
-The primary diagonal is:
+La diagonal principal es:
 
 ```
 11
@@ -65,9 +65,9 @@ The primary diagonal is:
      -12
 ```
 
-Sum across the primary diagonal: 11 + 5 - 12 = 4
+Suma de la diagonal principal: 11 + 5 - 12 = 4
 
-The secondary diagonal is:
+La diagonal secundaria es:
 
 ```
      4
@@ -75,7 +75,7 @@ The secondary diagonal is:
 10
 ```
 
-Sum across the secondary diagonal: 4 + 5 + 10 = 19
-Difference: |4 - 19| = 15
+Suma de la diagonal secundaria: 4 + 5 + 10 = 19
+Diferencia: |4 - 19| = 15
 
-**Note**: |x| is the absolute value of x
+**Nota**: |x| es el valor absoluto de x

@@ -1,5 +1,5 @@
-# Linked list values
+# Valores de la lista enlazada
 
-Write a function, `linkedListValues`, that takes in the head of a linked list as an argument. The function should return an array containing all values of the nodes in the linked list.
+Escribe una función, `linkedListValues`, que reciba la cabeza de una lista enlazada como argumento. La función debe devolver un array que contenga todos los valores de los nodos de la lista enlazada.
 
-Hey. This is our first linked list problem, so you should be liberal with watching the Approach and Walkthrough. Be productive, not stubborn. -AZ
+Oye. Este es nuestro primer problema de listas enlazadas, así que deberías ser generoso viendo el enfoque y el recorrido. Sé productivo, no testarudo. -AZ

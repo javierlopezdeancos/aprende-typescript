@@ -1,3 +1,3 @@
-# Reverse list
+# Invertir lista
 
-Write a function, `reverseList`, that takes in the head of a linked list as an argument. The function should reverse the order of the nodes in the linked list in-place and return the new head of the reversed linked list.
+Escribe una función, `reverseList`, que reciba la cabeza de una lista enlazada como argumento. La función debe invertir el orden de los nodos de la lista enlazada in-situ y devolver la nueva cabeza de la lista enlazada invertida.

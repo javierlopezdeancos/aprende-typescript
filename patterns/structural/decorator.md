@@ -1,16 +1,16 @@
-# El patron Decorador
+# El patrón Decorador
 
-The Decorator pattern extends (decorates) an object's behavior dynamically. The ability to add new behavior at runtime is accomplished by a Decorator object which `wraps itself` around the original object. Multiple decorators can add or override functionality to the original object.
+El patrón Decorador extiende (decora) el comportamiento de un objeto dinámicamente. La capacidad de agregar un nuevo comportamiento en tiempo de ejecución se logra mediante un objeto Decorador que se `envuelve` alrededor del objeto original. Múltiples decoradores pueden agregar o anular la funcionalidad del objeto original.
 
-## Using decorator
+## Usando el decorador
 
-An example of a decorator is security management where business objects are given additional access to privileged information depending on the privileges of the authenticated user. For example, an HR manager gets to work with an employee object that has appended (i.e. is decorated with) the employee's salary record so that salary information can be viewed.
+Un ejemplo de un decorador es la gestión de la seguridad donde los objetos de negocio reciben acceso adicional a información privilegiada dependiendo de los privilegios del usuario autenticado. Por ejemplo, un gerente de recursos humanos puede trabajar con un objeto de empleado que tiene adjunto (es decir, está decorado con) el registro salarial del empleado para que se pueda ver la información salarial.
 
-Decorators provide flexibility to statically typed languages by allowing runtime changes as opposed to inheritance which takes place at compile time. JavaScript, however, is a dynamic language and the ability to extend an object at runtime is baked into the language itself.
+Los decoradores brindan flexibilidad a los lenguajes de tipo estático al permitir cambios en tiempo de ejecución en lugar de la herencia, que tiene lugar en tiempo de compilación. JavaScript, sin embargo, es un lenguaje dinámico y la capacidad de extender un objeto en tiempo de ejecución está integrada en el propio lenguaje.
 
-For this reason, the Decorator pattern is less relevant to JavaScript developers. In JavaScript the Extend and Mixin patterns subsume the Decorator pattern. You can learn more about these and other Modern JavaScript patterns in our
+Por esta razón, el patrón Decorador es menos relevante para los desarrolladores de JavaScript. En JavaScript, los patrones Extend y Mixin subsumen el patrón Decorador. Puede obtener más información sobre estos y otros patrones de JavaScript moderno en nuestro
 
-## Diagram
+## Diagrama
 
 ```mermaid
 flowchart LR
@@ -18,16 +18,16 @@ flowchart LR
   Decorator --> Component
 ```
 
-## Participants
+## Participantes
 
-The objects participating in this pattern are:
+Los objetos que participan en este patrón son:
 
-- `Client`: Function maintains a reference to the decorated Component.
-- `Component`: Object to which additional functionality is added.
-- `Decorator`: `wraps around` Component by maintaining a reference to it
-defines an interface that conforms to Component's interface
-implements the additional functionality (addedMembers in diagram).
+- `Cliente`: La función mantiene una referencia al Componente decorado.
+- `Componente`: Objeto al que se le agrega funcionalidad adicional.
+- `Decorador`: `se envuelve alrededor` del Componente manteniendo una referencia a él
+dfine una interfaz que se ajusta a la interfaz del Componente
+implementa la funcionalidad adicional (addedMembers en el diagrama).
 
-## See a code example here
+## Ver un ejemplo de código aquí
 
-[Example](./decorator.ts)
+[Ejemplo](./decorator.ts)

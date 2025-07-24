@@ -1,15 +1,13 @@
-# The Publish-Subscribe Pattern
+# El patrón Publicar-Suscribir
 
-The publish-subscribe (or pub/sub) messaging pattern is a design pattern that provides a framework for exchanging messages that allows for loose coupling and scaling between the sender of messages (publishers) and receivers (subscribers) on topics they subscribe to.
+El patrón de mensajería publicar-suscribir (o pub/sub) es un patrón de diseño que proporciona un marco para intercambiar mensajes que permite un acoplamiento débil y la escalabilidad entre el emisor de mensajes (publicadores) y los receptores (suscriptores) en los temas a los que se suscriben.
 
-Messages are sent (pushed) from a publisher to subscribers as they become available. The host (publisher) publishes messages (events) to channels (topics). Subscribers can sign up for the topics they are interested in.
+Los mensajes se envían (empujan) de un publicador a los suscriptores a medida que están disponibles. El anfitrión (publicador) publica mensajes (eventos) en canales (temas). Los suscriptores pueden registrarse en los temas que les interesan.
 
-This is different from the standard request/response (pull) models in which publishers check if new data has become available. This makes the pub/sub method the most suitable framework for streaming data in real-time.
+Esto es diferente de los modelos estándar de solicitud/respuesta (extracción) en los que los publicadores comprueban si hay nuevos datos disponibles. Esto hace que el método pub/sub sea el marco más adecuado para la transmisión de datos en tiempo real.
 
-It also means that dynamic networks can be built at internet scale. However, building a messaging infrastructure at such a scale can be problematic.
+También significa que se pueden construir redes dinámicas a escala de Internet. Sin embargo, construir una infraestructura de mensajería a tal escala puede ser problemático.
 
-This introduction to the pub/sub messaging pattern describes what it is, and why developers use it, and discusses the difficulties that must be overcome when building a messaging system at scale.
+Esta introducción al patrón de mensajería pub/sub describe qué es, por qué los desarrolladores lo usan y analiza las dificultades que deben superarse al construir un sistema de mensajería a escala.
 
-[Example](./publish-subscribe.ts)
-
-
+[Ejemplo](./publish-subscribe.ts)

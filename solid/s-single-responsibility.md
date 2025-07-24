@@ -1,13 +1,13 @@
-# 💎 S OF SOLID (SINGLE RESPONSIBILITY)
+# 💎 S DE SOLID (RESPONSABILIDAD ÚNICA)
 
-The name itself suggest that the *“class should be having one and only responsibility”*.
+El propio nombre sugiere que la *“clase debe tener una y solo una responsabilidad”*.
 
-## ❌ BAD EXAMPLE
+## ❌ MAL EJEMPLO
 
-> Class should have one responsibility in this case
-only build a car with their characteristics but not
-have any log method in console, this should be other
-responsibility.
+> La clase debe tener una responsabilidad en este caso
+solo construir un coche con sus características pero no
+tener ningún método de registro en la consola, esto debería ser otra
+responsabilidad.
 
 ```ts
 export class CarWrong {
@@ -28,16 +28,16 @@ export class CarWrong {
   }
 
   public description(): void {
-    console.log(`My ${this.brand} is ${this.color}`);
+    console.log(`Mi ${this.brand} es ${this.color}`);
   }
 }
 ```
 
-## ✔️ GOOD EXAMPLE
+## ✔️ BUEN EJEMPLO
 
-> In this case we have two classes with split responsibilities.
-  `CarLogger` has the responsibility to log in console some actions
-  to car injected by params.
+> En este caso tenemos dos clases con responsabilidades divididas.
+  `CarLogger` tiene la responsabilidad de registrar en la consola algunas acciones
+  del coche inyectado por parámetros.
 
 ```ts
 export class CarOk {
@@ -62,7 +62,7 @@ export class CarLogger {
   constructor(private car: CarOk) {}
 
   public description(): void {
-    console.log(`My ${this.car.brand} is ${this.car.color}`);
+    console.log(`Mi ${this.car.brand} es ${this.car.color}`);
   }
 }
 ```

@@ -1,48 +1,48 @@
-# Solve me first
+# Resuélveme primero
 
-Take a look to the complete description of [exercise in HackerRank](https://www.hackerrank.com/challenges/a-very-big-sum)
+Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/a-very-big-sum)
 
-Complete the function solveMeFirst to compute the sum of two integers.
+Completa la función `solveMeFirst` para calcular la suma de dos enteros.
 
-## Example
+## Ejemplo
 
 ```
 a = 7
 b = 3
 ```
 
-Return `10`.
+Devuelve `10`.
 
-### Function Description
+### Descripción de la función
 
-Complete the `solveMeFirst` function in the editor below.
+Completa la función `solveMeFirst` en el editor de abajo.
 
-`solveMeFirst` has the following parameters:
+`solveMeFirst` tiene los siguientes parámetros:
 
-- `int a`: the first value
-- `int b`: the second value
+- `int a`: el primer valor
+- `int b`: el segundo valor
 
-### Returns
+### Devuelve
 
-- `int`: the sum of and
+- `int`: la suma de a y b
 
-### Constraints
+### Restricciones
 
 `1 <= a,b <= 1000`
 
-### Sample Input
+### Ejemplo de entrada
 
 ```
 a = 2
 b = 3
 ```
 
-### Sample Output
+### Ejemplo de salida
 
 ```
 5
 ```
 
-### Explanation
+### Explicación
 
 `2 + 3 = 5`

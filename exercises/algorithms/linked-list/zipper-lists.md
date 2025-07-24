@@ -1,7 +1,7 @@
-# Zipper lists
+# Listas cremallera
 
-Write a function, zipperLists, that takes in the head of two linked lists as arguments. The function should zipper the two lists together into single linked list by alternating nodes. If one of the linked lists is longer than the other, the resulting list should terminate with the remaining nodes. The function should return the head of the zippered linked list.
+Escribe una función, `zipperLists`, que reciba como argumento las cabezas de dos listas enlazadas. La función debe unir las dos listas en una sola lista enlazada alternando los nodos. Si una de las listas enlazadas es más larga que la otra, la lista resultante debe terminar con los nodos restantes. La función debe devolver la cabeza de la lista enlazada unida.
 
-Do this in-place, by mutating the original Nodes.
+Hazlo in-situ, mutando los nodos originales.
 
-You may assume that both input lists are non-empty.
+Puedes asumir que ambas listas de entrada no están vacías.

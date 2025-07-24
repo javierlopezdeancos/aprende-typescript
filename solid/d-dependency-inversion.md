@@ -1,10 +1,10 @@
-# 💎 D OF SOLID (DEPENDENCY INVERSION PRINCIPLE)
+# 💎 D DE SOLID (PRINCIPIO DE INVERSIÓN DE DEPENDENCIAS)
 
-This principle suggest that *“classes should depend on abstraction but not on concretion”*. What does it mean that we should be having object of interface which helps us to communicate with the concrete classes. What do we gain from this is, we hide the actual implementation of class A from the class B. So if class A changes the class B doesn’t need to care or know about the changes.
+Este principio sugiere que *“las clases deben depender de la abstracción pero no de la concreción”*. Lo que significa que deberíamos tener un objeto de interfaz que nos ayude a comunicarnos con las clases concretas. Lo que ganamos con esto es que ocultamos la implementación real de la clase A de la clase B. Por lo tanto, si la clase A cambia, la clase B no necesita preocuparse ni saber sobre los cambios.
 
-## ❌ BAD EXAMPLE
+## ❌ MAL EJEMPLO
 
-> In this example our hight level module `GetServiceWrong` depends from a low level module `DatabaseServiceWrong`, should be the oposite direction of dependency.
+> En este ejemplo, nuestro módulo de alto nivel `GetServiceWrong` depende de un módulo de bajo nivel `DatabaseServiceWrong`, debería ser la dirección opuesta de la dependencia.
 
 ```ts
 export class DatabaseServiceWrong {
@@ -23,9 +23,9 @@ export class GetServiceWrong {
 }
 ```
 
-## ✔️  GOOD EXAMPLE
+## ✔️ BUEN EJEMPLO
 
-> In this example our hight level module `GetServiceOk` depends from a more generic abstraction `DataSource`. No worries about what kind of implementation we need to get data `DatabaseServiceOk` or `APIService`, because both are implementing this `DataSource` abstraction interface and works well in our hight level module `GetServiceOk`.
+> En este ejemplo, nuestro módulo de alto nivel `GetServiceOk` depende de una abstracción más genérica `DataSource`. No hay que preocuparse por qué tipo de implementación necesitamos para obtener datos, `DatabaseServiceOk` o `APIService`, porque ambos implementan esta interfaz de abstracción `DataSource` y funcionan bien en nuestro módulo de alto nivel `GetServiceOk`.
 
 ```ts
 

@@ -87,3 +87,5 @@ render(body);
 ## Ver un ejemplo de código
 
 [Example](./composite.ts)
+
+```

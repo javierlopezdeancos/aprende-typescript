@@ -1,5 +1,5 @@
-# Max root to leaf path sum
+# Suma máxima de la ruta de la raíz a la hoja
 
-Write a function, `maxRootToLeafPathSum`, that takes in the root of a binary tree that contains number values. The function should return the maximum sum of any root to leaf path within the tree.
+Escribe una función, `maxRootToLeafPathSum`, que reciba la raíz de un árbol binario que contiene valores numéricos. La función debe devolver la suma máxima de cualquier ruta de la raíz a la hoja dentro del árbol.
 
-You may assume that the input tree is non-empty.
+Puedes asumir que el árbol de entrada no está vacío.

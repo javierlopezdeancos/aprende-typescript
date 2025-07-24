@@ -1,8 +1,8 @@
-# Has path
+# Tiene ruta
 
-Write a function, `hasPath`, that takes in an object representing the adjacency list of a directed acyclic graph and two nodes (src, dst). The function should return a boolean indicating whether or not there exists a directed path between the source and destination nodes.
+Escribe una función, `hasPath`, que reciba un objeto que represente la lista de adyacencia de un grafo acíclico dirigido y dos nodos (origen, destino). La función debe devolver un booleano que indique si existe o no una ruta dirigida entre los nodos de origen y destino.
 
-Hey. This is our first graph problem, so you should be liberal with watching the Approach and Walkthrough. Be productive, not stubborn. -AZ
+Oye. Este es nuestro primer problema de grafos, así que deberías ser generoso viendo el enfoque y el recorrido. Sé productivo, no testarudo. -AZ
 
 ```mermaid
 flowchart LR

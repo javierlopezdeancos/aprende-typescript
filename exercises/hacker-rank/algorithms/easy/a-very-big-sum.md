@@ -1,42 +1,42 @@
-# A very big sum
+# Una suma muy grande
 
-Take a look to the complete description of [exercise in HackerRank](https://www.hackerrank.com/challenges/a-very-big-sum)
+Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/a-very-big-sum)
 
-In this challenge, you are required to calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
+En este desafío, se te pide que calcules e imprimas la suma de los elementos de un array, teniendo en cuenta que algunos de esos enteros pueden ser bastante grandes.
 
-## Function Description
+## Descripción de la función
 
-Complete the `aVeryBigSum` function in the editor. It must return the sum of all array elements.
+Completa la función `aVeryBigSum` en el editor. Debe devolver la suma de todos los elementos del array.
 
-`aVeryBigSum `has the following parameter(s):
+`aVeryBigSum` tiene los siguientes parámetros:
 
-- `int ar[n]`: an array of integers .
+- `int ar[n]`: un array de enteros.
 
-### Return
+### Devolución
 
-- `long`: the sum of all array elements
+- `long`: la suma de todos los elementos del array
 
-### Input Format
+### Formato de entrada
 
-The first line of the input consists of an integer `n`.
+La primera línea de la entrada consiste en un entero `n`.
 
-The next line contains `n` space-separated integers contained in the array.
+La siguiente línea contiene `n` enteros separados por espacios contenidos en el array.
 
-### Output Format
+### Formato de salida
 
-Return the integer sum of the elements in the array.
+Devuelve la suma entera de los elementos del array.
 
-### Sample Input
+### Ejemplo de entrada
 
 ```
 5
 1000000001 1000000002 1000000003 1000000004 1000000005
 ```
 
-### Output
+### Salida
 
 ```
 5000000015
 ```
 
-_Note_: When we add several integer values, the resulting sum might exceed the [max range](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER). You might need to use long int
+_Nota_: Cuando sumamos varios valores enteros, la suma resultante puede exceder el [rango máximo](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER). Es posible que necesites usar un entero largo

@@ -1,14 +1,14 @@
-# 💎 I OF SOLID (INTERFACE SEGREGATION PRINCIPLE)
+# 💎 I DE SOLID (PRINCIPIO DE SEGREGACIÓN DE INTERFACES)
 
-This principle suggests that *“many client specific interfaces are better than one general interface”*.
+Este principio sugiere que *“muchas interfaces específicas del cliente son mejores que una interfaz general”*.
 
-This is the first principle which is applied on interface, all the above three principles applies on classes.
+Este es el primer principio que se aplica a la interfaz, los tres principios anteriores se aplican a las clases.
 
-## ❌ BAD EXAMPLE
+## ❌ MAL EJEMPLO
 
-> As we can see in this example, Parrot not swim, the penguin not fly and the toucan can't swim.
+> Como podemos ver en este ejemplo, el loro no nada, el pingüino no vuela y el tucán no puede nadar.
 >
-> Client classes are depending on all methods from IBird that not use.
+> Las clases de cliente dependen de todos los métodos de `IBird` que no utilizan.
 
 ```ts
 interface IBird {
@@ -60,7 +60,7 @@ class Penguin implements IBird {
 }
 ```
 
-## ✔️  GOOD EXAMPLE
+## ✔️ BUEN EJEMPLO
 
 ```ts
 interface IBirdOk {

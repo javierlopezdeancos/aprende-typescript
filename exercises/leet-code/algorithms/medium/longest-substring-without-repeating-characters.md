@@ -1,33 +1,35 @@
-# Longest Substring Without Repeating Characters
+# Subcadena más larga sin caracteres repetidos
 
-Given a string `s`, find the length of the longest substring (_A substring is a contiguous non-empty sequence of characters within a string_) without repeating characters.
+[Enlace de Leet Code](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 
-**Example 1:**
+Dada una cadena `s`, encuentra la longitud de la subcadena más larga sin caracteres repetidos.
 
-```
-Input: s = "abcabcbb"
-Output: 3
-Explanation: The answer is "abc", with the length of 3.
-```
-
-**Example 2:**
+**Ejemplo 1:**
 
 ```
-Input: s = "bbbbb"
-Output: 1
-Explanation: The answer is "b", with the length of 1.
+Entrada: s = "abcabcbb"
+Salida: 3
+Explicación: La respuesta es "abc", con una longitud de 3.
 ```
 
-**Example 3:**
+**Ejemplo 2:**
 
 ```
-Input: s = "pwwkew"
-Output: 3
-Explanation: The answer is "wke", with the length of 3.
-Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+Entrada: s = "bbbbb"
+Salida: 1
+Explicación: La respuesta es "b", con una longitud de 1.
 ```
 
-**Constraints:**
+**Ejemplo 3:**
 
-- `0 <= s.length <= 5 * 104`
-- `s` consists of English letters, digits, symbols and spaces.
+```
+Entrada: s = "pwwkew"
+Salida: 3
+Explicación: La respuesta es "wke", con una longitud de 3.
+Observa que la respuesta debe ser una subcadena, "pwke" es una subsecuencia y no una subcadena.
+```
+
+**Restricciones:**
+
+- `0 <= s.length <= 5 * 10^4`
+- `s` consiste en letras inglesas, dígitos, símbolos y espacios.

@@ -1,10 +1,10 @@
-# 💎 O OF SOLID (OPEN CLOSE)
+# 💎 O DE SOLID (ABIERTO/CERRADO)
 
-This principle suggests that *"software entities (class, modules and functions should be open to extend, but close to be modify"*.
+Este principio sugiere que *"las entidades de software (clases, módulos y funciones) deben estar abiertas a la extensión, pero cerradas a la modificación"*.
 
-## ❌ BAD EXAMPLE
+## ❌ MAL EJEMPLO
 
-> This function is not ready to extend another brand into cars array, then we should modify with other if `printAveragePriceWrong` function.
+> Esta función no está preparada para extender otra marca en el array de coches, por lo que deberíamos modificarla con otro if en la función `printAveragePriceWrong`.
 
 ```ts
 class Car {
@@ -46,11 +46,11 @@ export function printAveragePriceWrong(cars: Car[]): void {
 }
 ```
 
-## ✔️  GOOD EXAMPLE
+## ✔️ BUEN EJEMPLO
 
-  > In this case we have two classes with split responsibilities.
-  `CarLogger` has the responsibility to log in console some actions
-  to car injected by params.
+  > En este caso tenemos dos clases con responsabilidades divididas.
+  `CarLogger` tiene la responsabilidad de registrar en la consola algunas acciones
+  del coche inyectado por parámetros.
 
 ```ts
 interface IBrandCar extends Car {
@@ -99,8 +99,8 @@ export const brandCars: IBrandCar[] = [
   new Peugeot("Yellow")
 ];
 
-// This is ready to extend brandCars with other brand cars
-// without need to touch any line in `printAveragePriceOk` function
+// Esto está listo para extender brandCars with other brand cars
+// sin necesidad de tocar ninguna línea en la función `printAveragePriceOk`
 export function printAveragePriceOk(cars: IBrandCar[]): void {
   for (let c = 0; c < brandCars.length; c++) {
     const car = brandCars[c];

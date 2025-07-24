@@ -1,3 +1,3 @@
-# Breadth first values
+# Valores en anchura
 
-Write a function, `breadthFirstValues`, that takes in the root of a binary tree. The function should return an array containing all values of the tree in breadth-first order.
+Escribe una función, `breadthFirstValues`, que reciba la raíz de un árbol binario. La función debe devolver un array que contenga todos los valores del árbol en orden de anchura.

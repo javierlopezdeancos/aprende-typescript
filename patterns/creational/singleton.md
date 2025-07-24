@@ -77,4 +77,4 @@ Error: You can only create one instance!
 
 ## Ver un ejemplo de código
 
-[Ejemplo en vivo](./singleton.ts)
+[Ejemplo vivo](./singleton.ts)

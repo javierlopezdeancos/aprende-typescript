@@ -1,3 +1,3 @@
-# Sum list
+# Suma de la lista
 
-Write a function, `sumList`, that takes in the head of a linked list containing numbers as an argument. The function should return the total sum of all values in the linked list.
+Escribe una función, `sumList`, que reciba como argumento la cabeza de una lista enlazada que contiene números. La función debe devolver la suma total de todos los valores de la lista enlazada.

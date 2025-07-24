@@ -1,52 +1,52 @@
-# Mini Max Sum
+# Suma mínima y máxima
 
-Take a look to the complete description of [exercise in HackerRank](https://www.hackerrank.com/challenges/mini-max-sum)
+Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/mini-max-sum)
 
-Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+Dados cinco enteros positivos, encuentra los valores mínimo y máximo que se pueden calcular sumando exactamente cuatro de los cinco enteros. Luego, imprime los respectivos valores mínimo y máximo como una sola línea de dos enteros largos separados por espacios.
 
-**Example**
+**Ejemplo**
 
 *arr=[1, 3, 5, 7, 9]*
 
-The minimum sum is *1 + 3 + 5 + 7 = 16* and the maximum sum is *3 + 5 + 7 + 9 = 24*  The function prints
+La suma mínima es *1 + 3 + 5 + 7 = 16* y la suma máxima es *3 + 5 + 7 + 9 = 24*. La función imprime
 
 ```
 16 24
 ```
 
-**Function Description**
+**Descripción de la función**
 
-Complete the miniMaxSum function in the editor below.
+Completa la función `miniMaxSum` en el editor de abajo.
 
-miniMaxSum has the following parameter(s):
+`miniMaxSum` tiene los siguientes parámetros:
 
-* *arr: an array of 5 integers*
+* *arr: un array de 5 enteros*
 
 
-**Print**
+**Imprimir**
 
-Print two space-separated integers on one line: the minimum sum and the maximum sum of
-`4` of `5` elements.
+Imprime dos enteros separados por espacios en una línea: la suma mínima y la suma máxima de
+`4` de `5` elementos.
 
-**Input Format**
+**Formato de entrada**
 
-A single line of five space-separated integers.
+Una sola línea de cinco enteros separados por espacios.
 
-**Constraints**
+**Restricciones**
 
 1 <= arr[i] <= 10e9
 
-**Output Format**
+**Formato de salida**
 
-Print two space-separated long integers denoting the respective minimum and maximum values that can be calculated by summing exactly four of the five integers. (The output can be greater than a 32 bit integer.)
+Imprime dos enteros largos separados por espacios que denoten los respectivos valores mínimo y máximo que se pueden calcular sumando exactamente cuatro de los cinco enteros. (La salida puede ser mayor que un entero de 32 bits).
 
-**Sample Input**
+**Ejemplo de entrada**
 
 ```
 1 2 3 4 5
 ```
 
-**Sample Output**
+**Ejemplo de salida**
 
 ```
 10 14

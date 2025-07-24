@@ -1,3 +1,3 @@
-# Tree includes
+# El árbol incluye
 
-Write a function, `treeIncludes`, that takes in the root of a binary tree and a target value. The function should return a boolean indicating whether or not the value is contained in the tree.
+Escribe una función, `treeIncludes`, que reciba la raíz de un árbol binario y un valor objetivo. La función debe devolver un booleano que indique si el valor está o no contenido en el árbol.

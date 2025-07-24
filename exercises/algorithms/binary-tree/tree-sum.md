@@ -1,3 +1,3 @@
-# Tree sum
+# Suma del árbol
 
-Write a function, `treeSum`, that takes in the root of a binary tree that contains number values. The function should return the total sum of all values in the tree.
+Escribe una función, `treeSum`, que reciba la raíz de un árbol binario que contiene valores numéricos. La función debe devolver la suma total de todos los valores del árbol.

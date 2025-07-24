@@ -1,30 +1,30 @@
-# Add Binary
+# Suma Binaria
 
-[Leet Code url](https://leetcode.com/problems/add-binary/)
+[URL de Leet Code](https://leetcode.com/problems/add-binary/)
 
-Given two binary strings a and b, return their sum as a binary string.
+Dadas dos cadenas binarias a y b, devuelve su suma como una cadena binaria.
 
-**Example 1:**
-
-```
-Input: a = "11", b = "1"
-Output: "100"
-```
-
-**Example 2:**
+**Ejemplo 1:**
 
 ```
-Input: a = "1010", b = "1011"
-Output: "10101"
+Entrada: a = "11", b = "1"
+Salida: "100"
 ```
 
-**Constraints:**
+**Ejemplo 2:**
+
+```
+Entrada: a = "1010", b = "1011"
+Salida: "10101"
+```
+
+**Restricciones:**
 
 - 1 <= a.length, b.length <= 104
-- a and b consist only of '0' or '1' characters.
-- Each string does not contain leading zeros except for the zero itself.
+- a y b consisten solo en caracteres '0' o '1'.
+- Cada cadena no contiene ceros a la izquierda excepto el propio cero.
 
-**Solution**
+**Solución**
 
-[Source Code](./addBinary.ts)
-[Test Code](./addBinary.test.ts)
+[Código Fuente](./addBinary.ts)
+[Código de Prueba](./addBinary.test.ts)

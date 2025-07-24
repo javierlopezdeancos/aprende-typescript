@@ -1,52 +1,51 @@
-# Time Conversion
+# Conversión de hora
 
-Take a look to the complete description of [exercise in HackerRank](https://www.hackerrank.com/challenges/time-conversion)
+Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/time-conversion)
 
-Given a time in 12 [hour AM/PM format](https://en.wikipedia.org/wiki/12-hour_clock), convert it to military (24-hour) time.
+Dada una hora en formato de 12 horas AM/PM, conviértela a formato militar (24 horas).
 
-Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+Nota: - 12:00:00AM en un reloj de 12 horas es 00:00:00 en un reloj de 24 horas.
 
-- 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
+- 12:00:00PM en un reloj de 12 horas es 12:00:00 en un reloj de 24 horas.
 
-**Example**
+**Ejemplo**
 
 * s = `12:01:00:PM`
 
-Return `12:01:00`.
+Devuelve `12:01:00`.
 
 * s = `12:01:00:AM`
 
-Return `00:01:00`.
+Devuelve `00:01:00`.
 
-**Function Description**
+**Descripción de la función**
 
-Complete the timeConversion function in the editor below. It should return a new string representing the input time in 24 hour format.
+Completa la función `timeConversion` en el editor de abajo. Debe devolver una nueva cadena que represente la hora de entrada en formato de 24 horas.
 
-timeConversion has the following parameter(s):
+`timeConversion` tiene los siguientes parámetros:
 
-* string s: a time in *12* hour format
+* string s: una hora en formato de *12* horas
 
-**Returns**
+**Devuelve**
 
-* string: the time in *24* hour format
+* string: la hora en formato de *24* horas
 
-**Input Format**
+**Formato de entrada**
 
-A single string that represents a time in 12-hour clock format (i.e.: *hh:mm:ssAM* or *hh:mm:ssPM*).
+Una única cadena que representa una hora en formato de reloj de 12 horas (es decir, *hh:mm:ssAM* o *hh:mm:ssPM*).
 
-**Constraints**
+**Restricciones**
 
-* All input times are valid
+* Todas las horas de entrada son válidas
 
-**Sample Input 0**
+**Ejemplo de entrada 0**
 
 ```
 07:05:45PM
 ```
 
-**Sample Output 0**
+**Ejemplo de salida 0**
 
 ```
 19:05:45
 ```
-

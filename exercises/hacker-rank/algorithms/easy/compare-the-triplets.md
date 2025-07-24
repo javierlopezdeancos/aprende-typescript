@@ -1,79 +1,79 @@
-# Compare de triplets
+# Comparar los tripletes
 
-Take a look to the complete description of [exercise in HackerRank](https://www.hackerrank.com/challenges/compare-the-triplets)
+Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/compare-the-triplets)
 
-Alice and Bob each created one problem for HackerRank. A reviewer rates the two challenges, awarding points on a scale from 1 to 100 for three categories: problem clarity, originality, and difficulty.
+Alice y Bob crearon cada uno un problema para HackerRank. Un revisor califica los dos desafíos, otorgando puntos en una escala del 1 al 100 para tres categorías: claridad del problema, originalidad y dificultad.
 
-The rating for Alice's challenge is the triplet `a = (a[0], a[1], a[2])`, and the rating for Bob's challenge is the triplet `b = (b[0], b[1], b[2])`.
+La calificación para el desafío de Alice es el triplete `a = (a[0], a[1], a[2])`, y la calificación para el desafío de Bob es el triplete `b = (b[0], b[1], b[2])`.
 
-The task is to find their comparison points by comparing `a[0]` with `b[0]`, `a[1]` with `b[1]`, and `a[2]` with `b[2]`.
+La tarea es encontrar sus puntos de comparación comparando `a[0]` con `b[0]`, `a[1]` con `b[1]` y `a[2]` con `b[2]`.
 
-- If `a[i] > b[i]`, then Alice is awarded 1 point.
-- If `a[i] < b[i]`, then Bob is awarded 1 point.
-- If `a[i] = b[i]`, then neither person receives a point.
+- Si `a[i] > b[i]`, entonces Alice recibe 1 punto.
+- Si `a[i] < b[i]`, entonces Bob recibe 1 punto.
+- Si `a[i] = b[i]`, entonces ninguna persona recibe un punto.
 
-Comparison points is the total points a person earned.
+Los puntos de comparación son los puntos totales que una persona ha ganado.
 
-Given a and b, determine their respective comparison points.
+Dados a y b, determina sus respectivos puntos de comparación.
 
-## Example
+## Ejemplo
 
 ```
 a = [1, 2, 3]
 b = [3, 2, 1]
 ```
 
-- For elements `0`, Bob is awarded a point because `a[0] < b[0]` .
-- For the equal elements `a[1]` and `b[1]`, no points are earned.
-- Finally, for elements 2, `a[2] > b[2]` so Alice receives a point.
+- Para los elementos `0`, Bob recibe un punto porque `a[0] < b[0]`.
+- Para los elementos iguales `a[1]` y `b[1]`, no se ganan puntos.
+- Finalmente, para los elementos 2, `a[2] > b[2]`, por lo que Alice recibe un punto.
 
-The return array is [1, 1] with Alice's score first and Bob's second.
+El array de devolución es [1, 1] con la puntuación de Alice primero y la de Bob segundo.
 
-## Function Description
+## Descripción de la función
 
-Complete the function `compareTriplets ` in the editor.
+Completa la función `compareTriplets` en el editor.
 
-`compareTriplets` has the following parameter(s):
+`compareTriplets` tiene los siguientes parámetros:
 
-- `int a[3]`: Alice's challenge rating
-- `int b[3]`: Bob's challenge rating
+- `int a[3]`: la calificación del desafío de Alice
+- `int b[3]`: la calificación del desafío de Bob
 
-### Return
+### Devolución
 
-- `int[2]`: Alice's score is in the first position, and Bob's score is in the second.
+- `int[2]`: La puntuación de Alice está en la primera posición y la de Bob en la segunda.
 
-### Input Format
+### Formato de entrada
 
-The first line contains 3 space-separated integers, a[0], a[1], and a[2], the respective values in triplet a.
+La primera línea contiene 3 enteros separados por espacios, a[0], a[1] y a[2], los valores respectivos en el triplete a.
 
-The second line contains 3 space-separated integers, b[0], b[1], and b[2], the respective values in triplet b.
+La segunda línea contiene 3 enteros separados por espacios, b[0], b[1] y b[2], los valores respectivos en el triplete b.
 
-### Constraints
+### Restricciones
 
 - `1 ≤ a[i] ≤ 100`
 - `1 ≤ b[i] ≤ 100`
 
-### Sample Input 0
+### Ejemplo de entrada 0
 
 ```
 5 6 7
 3 6 10
 ```
 
-### Sample Output 0
+### Ejemplo de salida 0
 
 ```
 1 1
 ```
 
-### Sample Input 1
+### Ejemplo de entrada 1
 
 ```
 17 28 30
 99 16 8
 ```
 
-### Sample Output 1
+### Ejemplo de salida 1
 
 ```
 2 1

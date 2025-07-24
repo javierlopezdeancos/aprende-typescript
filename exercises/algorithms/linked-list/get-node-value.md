@@ -1,5 +1,5 @@
-# Get node value
+# Obtener valor del nodo
 
-Write a function, getNodeValue, that takes in the head of a linked list and an index. The function should return the value of the linked list at the specified index.
+Escribe una función, `getNodeValue`, que reciba la cabeza de una lista enlazada y un índice. La función debe devolver el valor de la lista enlazada en el índice especificado.
 
-If there is no node at the given index, then return null.
+Si no hay ningún nodo en el índice dado, devuelve nulo.

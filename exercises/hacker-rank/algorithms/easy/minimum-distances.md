@@ -1,3 +1,3 @@
-# Minimum Distances
+# Distancias mínimas
 
-The distance between two array values is the number of indices between them. Given , find the minimum distance between any pair of equal elements in the array. If no such value exists, return .
+La distancia entre dos valores de un array es el número de índices que hay entre ellos. Dado un array, encuentra la distancia mínima entre cualquier par de elementos iguales en el array. Si no existe tal valor, devuelve -1.

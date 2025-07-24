@@ -1,12 +1,12 @@
-# The Observer pattern
+# El patrón Observador
 
-With the observer pattern, we can subscribe certain objects, the observers, to another object, called the observable. Whenever an event occurs, the observable notifies all its observers!
+Con el patrón observador, podemos suscribir ciertos objetos, los observadores, a otro objeto, llamado el observable. ¡Cada vez que ocurre un evento, el observable notifica a todos sus observadores!
 
-An observable object usually contains 3 important parts:
+Un objeto observable generalmente contiene 3 partes importantes:
 
-* `observers`: an array of observers that will get notified whenever a specific event occurs.
-* `subscribe()`: a method in order to add observers to the observers list.
-* `unsubscribe()`: a method in order to remove observers from the observers list.
-* `notify()`: a method to notify all observers whenever a specific event occurs.
+* `observers`: un array de observadores que serán notificados cada vez que ocurra un evento específico.
+* `subscribe()`: un método para agregar observadores a la lista de observadores.
+* `unsubscribe()`: un método para eliminar observadores de la lista de observadores.
+* `notify()`: un método para notificar a todos los observadores cada vez que ocurre un evento específico.
 
-[Example](./observer.ts)
+[Ejemplo](./observer.ts)

@@ -1,16 +1,16 @@
-# The Proxy pattern
+# El patrón Proxy
 
-The Proxy pattern provides a surrogate or placeholder object for another object and controls access to this other object.
+El patrón Proxy proporciona un objeto sustituto o marcador de posición para otro objeto y controla el acceso a este otro objeto.
 
-With a Proxy object, we get more control over the interactions with certain objects. A proxy object can determine the behavior whenever we're interacting with the object, for example when we're getting a value, or setting a value.
+Con un objeto Proxy, obtenemos más control sobre las interacciones con ciertos objetos. Un objeto proxy puede determinar el comportamiento cada vez que interactuamos con el objeto, por ejemplo, cuando obtenemos un valor o establecemos un valor.
 
-## Using proxy
+## Usando el proxy
 
-In object-oriented programming, objects do the work they advertise through their interface (properties and methods). Clients of these objects expect this work to be done quickly and efficiently. However, there are situations where an object is severely constrained and cannot live up to its responsibility. Typically this occurs when there is a dependency on a remote resource (resulting in network latency) or when an object takes a long time to load.
+En la programación orientada a objetos, los objetos realizan el trabajo que anuncian a través de su interfaz (propiedades y métodos). Los clientes de estos objetos esperan que este trabajo se realice de forma rápida y eficiente. Sin embargo, hay situaciones en las que un objeto está severamente restringido y no puede cumplir con su responsabilidad. Normalmente, esto ocurre cuando hay una dependencia de un recurso remoto (lo que resulta en latencia de red) o cuando un objeto tarda mucho en cargarse.
 
-In situations like these you apply the Proxy pattern and create a proxy object that ‘stands in’ for the original object. The Proxy forwards the request to a target object. The interface of the Proxy object is the same as the original object and clients may not even be aware they are dealing with a proxy rather than the real object
+En situaciones como estas, se aplica el patrón Proxy y se crea un objeto proxy que "sustituye" al objeto original. El Proxy reenvía la solicitud a un objeto de destino. La interfaz del objeto Proxy es la misma que la del objeto original y es posible que los clientes ni siquiera se den cuenta de que están tratando con un proxy en lugar del objeto real.
 
-## Diagram
+## Diagrama
 
 ```mermaid
 flowchart LR
@@ -18,12 +18,10 @@ flowchart LR
     Proxy --> |request| RealSubject
 ```
 
-## Participants
+## Participantes
 
-The objects participating in this pattern are:
+Los objetos que participan en este patrón son:
 
-- `Client`: Calls Proxy to request an operation.
-- `Proxy`: Provides an interface similar to the real object
-maintains a reference that lets the proxy access the real object
-handles requests and forwards these to the real object.
-- `RealSubject`: Defines the real object for which service is requested.
+- `Cliente`: Llama al Proxy para solicitar una operación.
+- `Proxy`: Proporciona una interfaz similar al objeto real, mantiene una referencia que permite al proxy acceder al objeto real, maneja las solicitudes y las reenvía al objeto real.
+- `RealSubject`: Define el objeto real para el que se solicita el servicio.

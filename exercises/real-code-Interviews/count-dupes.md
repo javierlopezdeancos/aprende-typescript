@@ -1,10 +1,10 @@
-# Count dupes big
+# Contar duplicados grandes
 
-Hi!, the task here is to figure out how many items in a list are repeated at least once.
+¡Hola! La tarea aquí es averiguar cuántos elementos de una lista se repiten al menos una vez.
 
-There's a function below, `countDupes`, that is currently unimplemented. Your task is to implement that function so the test below will pass.
+A continuación hay una función, `countDupes`, que actualmente no está implementada. Tu tarea es implementar esa función para que la prueba de abajo pase.
 
-You are free to ask me questions, use Google, or whatever else you need to do. Good luck!
+Eres libre de hacerme preguntas, usar Google o cualquier otra cosa que necesites. ¡Buena suerte!
 
 ```ts
 const CITIES = [
@@ -20,8 +20,8 @@ const CITIES = [
 ];
 
 export const countDupes = (cities: string[]): number => {
-  // TODO: Fill in the code for this function to return
-  // the correct number of items that are repeated in the
-  // given list.
+  // TODO: Rellena el código de esta función para que devuelva
+  // el número correcto de elementos que se repiten en la
+  // lista dada.
 };
 ```

@@ -1,50 +1,50 @@
-# Climbing the LeaderBoard
+# Subiendo en la tabla de clasificación
 
-An arcade game player wants to climb to the top of the leaderboard and track their ranking. The game uses [Dense Ranking](https://en.wikipedia.org/wiki/Ranking#Dense_ranking_.28.221223.22_ranking.29), so its leaderboard works like this:
+Un jugador de un juego de arcade quiere subir a lo más alto de la tabla de clasificación y seguir su ranking. El juego utiliza el [Ranking Denso](https://en.wikipedia.org/wiki/Ranking#Dense_ranking_.28.221223.22_ranking.29), por lo que su tabla de clasificación funciona así:
 
-- The player with the highest score is ranked number 1 on the leaderboard.
-- Players who have equal scores receive the same ranking number, and the next player(s) receive the immediately following ranking number.
+- El jugador con la puntuación más alta ocupa el puesto número 1 en la tabla de clasificación.
+- Los jugadores que tienen la misma puntuación reciben el mismo número de ranking, y el siguiente jugador o jugadores reciben el número de ranking inmediatamente siguiente.
 
-**Example**
+**Ejemplo**
 
-ranked = [100, 90, 90, 80]
-player = [70, 80, 105]
+clasificado = [100, 90, 90, 80]
+jugador = [70, 80, 105]
 
-The ranked players will have ranks **_1_**, **_2_**, **_2_**, and **_3_**, respectively. If the player's scores are **_70_**, **_80_** and **_105_**, their rankings after each game are **_4th_**, **_3rd_** and **_1st_**. Return **_[4, 3, 2]_**.
+Los jugadores clasificados tendrán los rangos **_1_**, **_2_**, **_2_** y **_3_**, respectivamente. Si las puntuaciones del jugador son **_70_**, **_80_** y **_105_**, sus clasificaciones después de cada partida son **_4ª_**, **_3ª_** y **_1ª_**. Devuelve **_[4, 3, 2]_**.
 
-**Function Description**
+**Descripción de la función**
 
-climbingLeaderboard has the following parameter(s):
+`climbingLeaderboard` tiene los siguientes parámetros:
 
-- int ranked[n]: the leaderboard scores
-- int player[m]: the player's scores
+- int ranked[n]: las puntuaciones de la tabla de clasificación
+- int player[m]: las puntuaciones del jugador
 
-**Returns**
+**Devuelve**
 
-- int[m]: the player's rank after each new score
+- int[m]: el rango del jugador después de cada nueva puntuación
 
-**Input Format**
+**Formato de entrada**
 
-The first line contains an integer **_n_**, the number of players on the leaderboard.
+La primera línea contiene un entero **_n_**, el número de jugadores en la tabla de clasificación.
 
-The next line contains **_n_** space-separated integers **_ranked[i]_**, the leaderboard scores in decreasing order.
+La siguiente línea contiene **_n_** enteros separados por espacios **_ranked[i]_**, las puntuaciones de la tabla de clasificación en orden decreciente.
 
-The next line contains an integer **_m_**, the number games the player plays.
+La siguiente línea contiene un entero **_m_**, el número de partidas que juega el jugador.
 
-The last line contains **_m_** space-separated integers **_player[j]_**, the game scores.
+La última línea contiene **_m_** enteros separados por espacios **_player[j]_**, las puntuaciones de las partidas.
 
-**Constraints**
+**Restricciones**
 
 - 1 <= n <= 2 x 10^5
 - 1 <= m <= 2 x 10^5
-- 1 <= ranked[i] <= 10^9 for 0 <= i < n
-- 1 <= player[j] <= 10^9 for 0 <= j < n
-- The existing leaderboard, **_ranked_**, is in descending order.
-- The player's scores, **_player_**, are in ascending order.
+- 1 <= ranked[i] <= 10^9 para 0 <= i < n
+- 1 <= player[j] <= 10^9 para 0 <= j < n
+- La tabla de clasificación existente, **_ranked_**, está en orden descendente.
+- Las puntuaciones del jugador, **_player_**, están en orden ascendente.
 
-**Subtask**
+**Subtarea**
 
-For 60% of the maximum score:
+Para el 60% de la puntuación máxima:
 
 - 1 <= n <= 200
 - 1 <= m <= 200

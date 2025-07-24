@@ -1,5 +1,5 @@
-# Tree min value
+# Valor mínimo del árbol
 
-Write a function, `treeMinValue`, that takes in the root of a binary tree that contains number values. The function should return the minimum value within the tree.
+Escribe una función, `treeMinValue`, que reciba la raíz de un árbol binario que contiene valores numéricos. La función debe devolver el valor mínimo dentro del árbol.
 
-You may assume that the input tree is non-empty.
+Puedes asumir que el árbol de entrada no está vacío.

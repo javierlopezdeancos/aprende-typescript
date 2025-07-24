@@ -1,49 +1,49 @@
-# Birthday Cake Candles
+# Velas de tarta de cumpleaños
 
-You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles. Count how many candles are tallest.
+Estás a cargo de la tarta para el cumpleaños de un niño. Has decidido que la tarta tendrá una vela por cada año de su edad total. Solo podrán apagar las velas más altas. Cuenta cuántas velas son las más altas.
 
-**Example**
+**Ejemplo**
 
-candles = [4,4,1,3]
+velas = [4,4,1,3]
 
-The maximum height candles are 4 units high. There are 2 of them, so return 2.
+Las velas de altura máxima tienen 4 unidades de altura. Hay 2 de ellas, así que devuelve 2.
 
-**Function Description**
+**Descripción de la función**
 
-Complete the function birthdayCakeCandles in the editor below.
+Completa la función `birthdayCakeCandles` en el editor de abajo.
 
-birthdayCakeCandles has the following parameter(s):
+`birthdayCakeCandles` tiene los siguientes parámetros:
 
-- int candles[n]: the candle heights
+- `int candles[n]`: las alturas de las velas
 
-**Returns**
+**Devuelve**
 
-- int: the number of candles that are tallest
+- `int`: el número de velas que son más altas
 
-**Input Format**
+**Formato de entrada**
 
-The first line contains a single integer, , the size of [candles].
+La primera línea contiene un único entero, , el tamaño de [velas].
 
-The second line contains space-separated integers, where each integer describes the height of candles[i].
+La segunda línea contiene enteros separados por espacios, donde cada entero describe la altura de `candles[i]`.
 
-**Constraints**
+**Restricciones**
 
 - 1 <= n <= 10^5
 - 1 <= candles[i] <= 10^7
 
-**Sample Input 0**
+**Ejemplo de entrada 0**
 
 ```
 4
 3 2 1 3
 ```
 
-**Sample Output 0**
+**Ejemplo de salida 0**
 
 ```
 2
 ```
 
-**Explanation 0**
+**Explicación 0**
 
-Candle heights are [3,2,1,3]. The tallest candles are 3 units, and there are 2 of them.
+Las alturas de las velas son [3,2,1,3]. Las velas más altas miden 3 unidades, y hay 2 de ellas.

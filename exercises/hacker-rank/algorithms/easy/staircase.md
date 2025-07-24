@@ -1,10 +1,10 @@
-# Staircase
+# Escalera
 
-Take a look to the complete description of [exercise in HackerRank](https://www.hackerrank.com/challenges/staircase/)
+Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/staircase/)
 
-Staircase detail
+Detalle de la escalera
 
-This is a staircase of size :
+Esta es una escalera de tamaño n = 4:
 
 ```
    #
@@ -13,43 +13,43 @@ This is a staircase of size :
 ####
 ```
 
-Its base and height are both equal to . It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
+Su base y altura son ambas iguales a n. Se dibuja usando símbolos # y espacios. La última línea no está precedida por ningún espacio.
 
-Write a program that prints a staircase of size `n`.
+Escribe un programa que imprima una escalera de tamaño `n`.
 
-## Function Description
+## Descripción de la función
 
-Complete the `staircase` function in the editor.
+Completa la función `staircase` en el editor.
 
-`staircase` has the following parameter(s):
+`staircase` tiene los siguientes parámetros:
 
-- `int n`: an integer
+- `int n`: un entero
 
-### Print
+### Imprimir
 
-Print a staircase as described above.
+Imprime una escalera como se describe arriba.
 
-### Input Format
+### Formato de entrada
 
-A single integer,`n` , denoting the size of the staircase.
+Un único entero, `n`, que denota el tamaño de la escalera.
 
-Constraints
+Restricciones
 
-``0 < n <= 100`
+`0 < n <= 100`
 
-### Output Format
+### Formato de salida
 
-Print a staircase of size `n` using # symbols and spaces.
+Imprime una escalera de tamaño `n` usando símbolos # y espacios.
 
-**Note**: The last line must have `0` spaces in it.
+**Nota**: La última línea debe tener `0` espacios.
 
-### Sample Input
+### Ejemplo de entrada
 
 ```
 6
 ```
 
-### Sample Output
+### Ejemplo de salida
 
 ```
      #
@@ -60,6 +60,6 @@ Print a staircase of size `n` using # symbols and spaces.
 ######
 ```
 
-### Explanation
+### Explicación
 
-The staircase is right-aligned, composed of # symbols and spaces, and has a height and width of ``n = 6`.
+La escalera está alineada a la derecha, compuesta por símbolos # y espacios, y tiene una altura y anchura de `n = 6`.

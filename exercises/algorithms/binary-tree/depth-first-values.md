@@ -1,5 +1,5 @@
-# Depth first values
+# Valores en profundidad
 
-Write a function, `depthFirstValues`, that takes in the root of a binary tree. The function should return an array containing all values of the tree in depth-first order.
+Escribe una función, `depthFirstValues`, que reciba la raíz de un árbol binario. La función debe devolver un array que contenga todos los valores del árbol en orden de profundidad.
 
-Hey. This is our first binary tree problem, so you should be liberal with watching the Approach and Walkthrough. Be productive, not stubborn. -AZ
+Oye. Este es nuestro primer problema de árboles binarios, así que deberías ser generoso viendo el enfoque y el recorrido. Sé productivo, no testarudo. -AZ

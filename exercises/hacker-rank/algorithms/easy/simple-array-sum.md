@@ -1,45 +1,45 @@
-# Simple array sum
+# Suma simple de un array
 
-Take a look to the complete description of [exercise in HackerRank](https://www.hackerrank.com/challenges/simple-array-sum/)
+Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/simple-array-sum/)
 
-Given an array of integers, find the sum of its elements.
+Dado un array de enteros, encuentra la suma de sus elementos.
 
-For example, if the array `arr = [1, 2, 3]`, `1 + 2 + 3 = 6` , so return `6`.
+Por ejemplo, si el array `arr = [1, 2, 3]`, `1 + 2 + 3 = 6`, así que devuelve `6`.
 
-## Function Description
+## Descripción de la función
 
-Complete the `simpleArraySum` function in the editor. It must return the sum of the array elements as an integer.
+Completa la función `simpleArraySum` en el editor. Debe devolver la suma de los elementos del array como un entero.
 
-simpleArraySum has the following parameter(s):
+`simpleArraySum` tiene los siguientes parámetros:
 
-`ar`: an array of integers
+`ar`: un array de enteros
 
-### Input Format
+### Formato de entrada
 
-The first line contains an integer `n`, denoting the size of the array.
-The second line contains `n` space-separated integers representing the array's elements.
+La primera línea contiene un entero `n`, que denota el tamaño del array.
+La segunda línea contiene `n` enteros separados por espacios que representan los elementos del array.
 
-### Constraints
+### Restricciones
 
 `0 < n, ar[1] <= 10`
 
-### Output Format
+### Formato de salida
 
-Print the sum of the array's elements as a single integer.
+Imprime la suma de los elementos del array como un único entero.
 
-## Sample Input
+## Ejemplo de entrada
 
 ```
 6
 1 2 3 4 10 11
 ```
 
-## Sample Output
+## Ejemplo de salida
 
 ```
 31
 ```
 
-## Explanation
+## Explicación
 
-We print the sum of the array's elements `1 + 2 + 3 + 4 + 10 + 11 = 31`
+Imprimimos la suma de los elementos del array `1 + 2 + 3 + 4 + 10 + 11 = 31`
