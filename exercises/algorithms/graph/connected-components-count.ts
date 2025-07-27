@@ -1,6 +1,5 @@
 import type { GraphType } from './graph-type';
-import type { NodeType } from '../binaryTree/Node.type';
-import { getProperty } from './getProperty';
+import { getProperty } from './get-property';
 
 const exploreNodeInGraph = (node: string, graph: GraphType) => {
   const neighbors = getProperty(node, graph);

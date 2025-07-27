@@ -1,4 +1,4 @@
-import { romanToInteger } from './romanToInteger';
+import { romanToInteger } from './roman-to-integer';
 
 describe('romanToInteger', (): void => {
   test('should return 1 if try to pass I', function () {

@@ -1,4 +1,4 @@
-import { lengthOfLongestSubstring } from './longestSubstringWithoutRepeatingCharacters';
+import { lengthOfLongestSubstring } from './longest-substring-without-repeating-characters';
 
 describe('longestSubStringWithoutRepeatingCharacter', (): void => {
   test('abcabcbb', function () {

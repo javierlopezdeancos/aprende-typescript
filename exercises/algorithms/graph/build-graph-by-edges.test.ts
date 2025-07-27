@@ -1,4 +1,4 @@
-import { buildGraphByEdges } from './buildGraphByEdges';
+import { buildGraphByEdges } from './build-graph-by-edges';
 import { GraphType } from './graph-type';
 import { EdgeType } from './edge-type';
 

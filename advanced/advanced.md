@@ -8,15 +8,15 @@ Tener un conocimiento sólido de los conceptos básicos de TypeScript nos permit
 
 ## Utility Types
 
-TypeScript viene con varios tipos de utilidades integradas que ayudan a manipular tipos de una forma muy flexible. Así es como funcionan algunos de ellos:
+TypeScript viene con varios tipos de utilidades integradas que nos ayudaran a manipular tipos de una forma muy flexible. Así es como funcionan algunos de ellos:
 
-- **`Parcial<T>`** hace que todas las propiedades del tipo `T` sean opcionales. Esto es particularmente útil cuando desea **crear objetos que pueden tener solo un subconjunto de propiedades de un tipo más complejo**.
+- [**`Parcial<Type>`**](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype) hace que todas las propiedades del tipo `Type` sean opcionales. Esto es particularmente útil cuando deseamos **crear objetos que pueden tener solo un subconjunto de propiedades de un tipo más complejo**.
 
-- **`Readonly<T>`** hace que todas las propiedades del tipo `T` sean de solo lectura. Esta utilidad es excelente para **crear objetos inmutables**, lo que garantiza que una vez creado un objeto, sus propiedades no se puedan cambiar.
+- [**`Readonly<Type>`**](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype) hace que todas las propiedades del tipo `Type` sean de solo lectura. Esta utilidad es excelente para **crear objetos inmutables**, lo que garantiza que una vez creado un objeto, sus propiedades no se puedan cambiar.
 
-- **`Pick<T, K>`** le permite crear un tipo eligiendo el conjunto de propiedades `K` del tipo `T`. Es útil para **crear tipos que solo necesitan unas pocas propiedades de un tipo más grande**.
+- [**`Pick<Type, Keys>`**](https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys) le permite crear un tipo eligiendo el conjunto de propiedades `Keys` del tipo `Type`. Es útil para **crear tipos que solo necesitan unas pocas propiedades de un tipo más grande**.
 
-- **`Record<K, T>`** crea un tipo con un conjunto de propiedades `K` de tipo `T`. Esta utilidad es útil para **crear objetos donde no conoce los nombres de las propiedades** con anticipación pero desea asegurarse de que todos los valores sean de un tipo determinado.
+- [**`Record<Keys, Type>`**](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type) crea un tipo con un conjunto de propiedades `Keys` de tipo `Type`. Esta utilidad es útil para **crear objetos donde no conoce los nombres de las propiedades** con anticipación pero desea asegurarse de que todos los valores sean de un tipo determinado.
 
 Podemos ver estos y mas Utility Types en la documentación oficial de TypeScript [oficial docs to utility types](https://www.typescriptlang.org/docs/handbook/utility-types.html).
 
@@ -29,18 +29,18 @@ Los Mapped Types permiten tomar un modelo existente y transformar cada una de su
 ```typescript
 type Permissions = 'read' | 'write' | 'delete';
 
-type PermissionMap<T> = {
-  [P in keyof T]: Permissions;
+type PermissionMap<Type> = {
+  [Property in keyof Type]: Permissions;
 };
 ```
 
-Con los Mapped Types, puede generar dinámicamente nuevos tipos basados en los existentes, agregando una capa de flexibilidad y reutilización a nuestras definiciones de tipos.
+Con los [Mapped Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html#handbook-content), puede generar dinámicamente nuevos tipos basados en los existentes, agregando una capa de flexibilidad y reutilización a nuestras definiciones de tipos.
 
-Para comprender mejor la utilidad de los Mapped Types, consideremos un ejemplo concreto que se encuentra comúnmente en el mundo real del desarrollo.
+Para comprender mejor la utilidad de los Mapped Types, consideremos un ejemplo concreto que podemos encontrar comúnmente en el mundo real de un desarrollador.
 
 ```typescript
-type ReadonlyObject<T> = {
-  readonly [P in keyof T]: T[P];
+type ReadonlyObject<Type> = {
+  readonly [Property in keyof Type]: Type[P];
 };
 
 interface User {
@@ -56,6 +56,6 @@ const user: ReadonlyObject<User> = {
 user.id = 2; // Error: Cannot assign to 'id' because it is a read-only property.
 ```
 
-En este ejemplo, `ReadonlyObject<T>` es un tipo mapeado genérico que itera sobre todas las propiedades `P` de un tipo `T` y marca cada propiedad como de solo lectura. Este tipo de utilidad facilita la transformación de cualquier tipo de objeto en su version inmutable.
+En este ejemplo, `ReadonlyObject<Type>` es un mapped type genérico que itera sobre todas las propiedades `Property` de un tipo `Type` y marca cada propiedad como de solo lectura. Este tipo de utilidad facilita la transformación de cualquier tipo de objeto en su version inmutable.
 
 A continuación, profundicemos en un escenario más avanzado en el que queremos transformar un tipo de objeto cambiando el tipo de sus valores y reasignando sus claves. Este ejemplo es particularmente útil cuando se adaptan interfaces entre diferentes capas de una aplicación (por ejemplo, el backend y el frontend) o cuando se consumen API externas:

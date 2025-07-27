@@ -1,5 +1,6 @@
-import { undirectedPath } from './undirectedPath';
+import { undirectedPath } from './undirected-path';
 import type { EdgeType } from './edge-type';
+import { getProperty } from './get-property';
 
 let edges: EdgeType[];
 

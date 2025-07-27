@@ -1,4 +1,4 @@
-import { getPegs } from './guessSecretGame';
+import { getPegs } from './guess-secret-game';
 
 describe('guessSecretGame', () => {
   test('should be []', () => {

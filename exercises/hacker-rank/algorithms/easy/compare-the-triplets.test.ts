@@ -1,4 +1,4 @@
-import { compareTriplets } from './compareTheTriplets';
+import { compareTriplets } from './compare-the-triplets';
 
 describe('Repeated String', () => {
   it('should return [ 1, 1 ] if alice = [5, 6, 7] and bob = [3, 6, 10]', () => {

@@ -1,4 +1,4 @@
-import { breakingRecords } from './breakingRecords';
+import { breakingRecords } from './breaking-records';
 
 describe('Repeated String', () => {
   it('should return [2, 4] record breaks from [10, 5, 20, 20, 4, 5, 2, 25, 1] scores', () => {

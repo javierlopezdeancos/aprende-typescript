@@ -1,4 +1,4 @@
-import { miniMaxSum } from './miniMaxSum';
+import { miniMaxSum } from './mini-max-sum';
 
 describe('miniMaxSum', () => {
   test('should be 16 24', () => {

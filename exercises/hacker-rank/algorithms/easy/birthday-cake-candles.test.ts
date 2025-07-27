@@ -1,4 +1,4 @@
-import { birthdayCakeCandles } from './birthdayCakeCandles';
+import { birthdayCakeCandles } from './birthday-cake-candles';
 
 describe('birthdayCakeCandles', (): void => {
   test('should return 2 if [4, 4, 1, 3]', function () {

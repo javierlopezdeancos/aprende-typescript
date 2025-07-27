@@ -1,4 +1,4 @@
-import { breadthFirstValues } from './breadthFirstValues';
+import { breadthFirstValues } from './breadth-first-values';
 import { GraphType } from './graph-type';
 
 let graph: GraphType;

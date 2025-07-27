@@ -1,4 +1,4 @@
-import { hasPath } from './hasPath';
+import { hasPath } from './has-path';
 import { GraphType } from './graph-type';
 
 let graph: GraphType;

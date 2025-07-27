@@ -1,4 +1,4 @@
-import { addTwoNumbers, createLinkedListNode } from './addTwoNumbers';
+import { addTwoNumbers, createLinkedListNode } from './add-two-numbers';
 
 describe('addTwoNumbers', (): void => {
   test('should sum nodes with same levels', function () {

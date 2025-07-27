@@ -1,4 +1,4 @@
-import { minimumDistances } from './minimumDistances';
+import { minimumDistances } from './minimum-distances';
 
 describe('Repeated String', () => {
   it('should return 3 as minimum distance to pairs from [3,2,1,2,3]', () => {

@@ -1,4 +1,4 @@
-import { timeConversion } from './timeConversion';
+import { timeConversion } from './time-conversion';
 
 describe('timeConversion', () => {
   test('12:00:00AM should be converted to 00:00:00', () => {

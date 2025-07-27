@@ -1,4 +1,4 @@
-import { multiplyStrings } from './multiplyStrings';
+import { multiplyStrings } from './multiply-strings';
 
 describe('addTwoNumbers', (): void => {
   test('1', function () {

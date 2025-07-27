@@ -1,4 +1,4 @@
-import { repeatedString } from './repeatedString';
+import { repeatedString } from './repeated-string';
 
 describe('Repeated String', () => {
   it('should return 2 a chars counted in the first 4 chars repeated infinite times "ababa"', () => {

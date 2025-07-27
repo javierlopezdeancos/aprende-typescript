@@ -1,4 +1,4 @@
-import { depthFirstValues } from './depthFirstValues';
+import { depthFirstValues } from './depth-first-values';
 import { GraphType } from './graph-type';
 
 let graph: GraphType;

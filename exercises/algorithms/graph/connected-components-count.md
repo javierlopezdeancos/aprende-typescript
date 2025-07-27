@@ -1,6 +1,6 @@
-# Recuento de componentes conectados
+# Connected components count (Recuento de componentes conectados)
 
-Escribe una función, `connectedComponentsCount`, que reciba la lista de adyacencia de un **grafo no dirigido**. La función debe devolver el número de componentes conectados dentro del grafo.
+Escribe una función, `connectedComponentsCount`, que reciba una adjacency list de un **undirected graph**. La función debe devolver el número de componentes conectados dentro del grafo.
 
 ```mermaid
 flowchart LR

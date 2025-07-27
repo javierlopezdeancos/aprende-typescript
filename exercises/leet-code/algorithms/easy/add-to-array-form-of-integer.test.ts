@@ -1,4 +1,4 @@
-import { addArrayFormOfInteger } from './addToArrayFormOfInteger';
+import { addArrayFormOfInteger } from './add-to-array-form-of-integer';
 
 describe('addArrayFormOfInteger', (): void => {
   test('should sum two strings that represent two binaries and return the sum stringifyed', function () {

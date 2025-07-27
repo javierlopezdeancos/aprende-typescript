@@ -1,4 +1,4 @@
-import { plusMinus } from './plusMinus';
+import { plusMinus } from './plus-minus';
 
 describe('Repeated String', () => {
   it('plusMinus([1, 2, 0, 0, -1, -10]', () => {

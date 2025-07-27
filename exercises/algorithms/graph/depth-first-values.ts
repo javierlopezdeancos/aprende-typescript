@@ -1,5 +1,5 @@
-import { getProperty } from './getProperty';
 import { GraphType } from './graph-type';
+import { getProperty } from './get-property';
 
 /**
  *

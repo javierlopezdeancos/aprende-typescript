@@ -1,4 +1,4 @@
-import { climbingLeaderBoard } from './climbingTheLeaderboard';
+import { climbingLeaderBoard } from './climbing-the-leaderboard';
 
 describe('Climbing the Leaderboard', () => {
   it('use case long array of rankingScores and playerScores', () => {

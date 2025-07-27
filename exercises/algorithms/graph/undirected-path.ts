@@ -1,7 +1,7 @@
-import { getProperty } from './getProperty';
-import { buildGraphByEdges } from './buildGraphByEdges';
+import { buildGraphByEdges } from './build-graph-by-edges';
 import { EdgeType } from './edge-type';
 import { GraphType } from './graph-type';
+import { getProperty } from './get-property';
 
 /**
  * Recursive version

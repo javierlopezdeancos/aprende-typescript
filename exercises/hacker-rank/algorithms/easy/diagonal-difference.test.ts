@@ -1,4 +1,4 @@
-import { diagonalDifference } from './diagonalDifference';
+import { diagonalDifference } from './diagonal-difference';
 
 describe('Diagonal difference', () => {
   it('should return 10 as diagonal difference from [[11, 2], [4, 5]] matrix', () => {

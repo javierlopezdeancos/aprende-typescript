@@ -1,5 +1,5 @@
-import { getProperty } from './getProperty';
 import { GraphType } from './graph-type';
+import { getProperty } from './get-property';
 
 // -------------------------------
 //
@@ -68,4 +68,4 @@ export const hasPath = (sourceNode: string, destinationNode: string, graph: Grap
 
   return false;
 };
- */
+*/

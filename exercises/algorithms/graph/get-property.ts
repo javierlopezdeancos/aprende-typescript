@@ -1,3 +1,3 @@
-export const getProperty = <KEY extends keyof OBJ, OBJ>(key: KEY, obj: OBJ) => {
+export const getProperty = <K extends keyof O, O>(key: K, obj: O) => {
   return obj[key];
 };

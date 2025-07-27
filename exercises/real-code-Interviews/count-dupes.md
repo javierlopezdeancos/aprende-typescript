@@ -1,10 +1,8 @@
 # Contar duplicados grandes
 
-¡Hola! La tarea aquí es averiguar cuántos elementos de una lista se repiten al menos una vez.
+La tarea es averiguar cuántos elementos de una lista se repiten al menos una vez.
 
 A continuación hay una función, `countDupes`, que actualmente no está implementada. Tu tarea es implementar esa función para que la prueba de abajo pase.
-
-Eres libre de hacerme preguntas, usar Google o cualquier otra cosa que necesites. ¡Buena suerte!
 
 ```ts
 const CITIES = [
