@@ -1,10 +1,10 @@
-# 💎 O DE SOLID (ABIERTO/CERRADO)
+# 💎 O - Principio Abierto/Cerrado (Principle open-closed)
 
 Este principio sugiere que *"las entidades de software (clases, módulos y funciones) deben estar abiertas a la extensión, pero cerradas a la modificación"*.
 
-## ❌ MAL EJEMPLO
+## ❌ Ejemplo erróneo
 
-> Esta función no está preparada para extender otra marca en el array de coches, por lo que deberíamos modificarla con otro if en la función `printAveragePriceWrong`.
+Esta función no está preparada para extender otra marca en el array de coches, por lo que deberíamos modificarla con otro if en la función `printAveragePriceWrong`.
 
 ```ts
 class Car {
@@ -46,11 +46,11 @@ export function printAveragePriceWrong(cars: Car[]): void {
 }
 ```
 
-## ✔️ BUEN EJEMPLO
+## ✔️ Ejemplo correcto
 
-  > En este caso tenemos dos clases con responsabilidades divididas.
-  `CarLogger` tiene la responsabilidad de registrar en la consola algunas acciones
-  del coche inyectado por parámetros.
+En este caso tenemos dos clases con responsabilidades divididas.
+`CarLogger` tiene la responsabilidad de registrar en la consola algunas acciones
+del coche inyectado por parámetros.
 
 ```ts
 interface IBrandCar extends Car {

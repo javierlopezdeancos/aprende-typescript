@@ -1,14 +1,14 @@
-# 💎 I DE SOLID (PRINCIPIO DE SEGREGACIÓN DE INTERFACES)
+# I - Principio de segregación de interfaces (Principle of Interface Segregation)
 
 Este principio sugiere que *“muchas interfaces específicas del cliente son mejores que una interfaz general”*.
 
 Este es el primer principio que se aplica a la interfaz, los tres principios anteriores se aplican a las clases.
 
-## ❌ MAL EJEMPLO
+## ❌ Ejemplo erróneo
 
-> Como podemos ver en este ejemplo, el loro no nada, el pingüino no vuela y el tucán no puede nadar.
->
-> Las clases de cliente dependen de todos los métodos de `IBird` que no utilizan.
+Como podemos ver en este ejemplo, el loro no nada, el pingüino no vuela y el tucán no puede nadar.
+
+Las clases de cliente dependen de todos los métodos de `IBird` que no utilizan.
 
 ```ts
 interface IBird {
@@ -60,7 +60,7 @@ class Penguin implements IBird {
 }
 ```
 
-## ✔️ BUEN EJEMPLO
+## ✔️ Ejemplo correcto
 
 ```ts
 interface IBirdOk {

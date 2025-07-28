@@ -1,4 +1,3 @@
-import { NodeType } from './node-type';
 import { GraphType } from './graph-type';
 import { getProperty } from './get-property';
 

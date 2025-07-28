@@ -1,4 +1,4 @@
-# 💎 L DE SOLID (SUSTITUCIÓN DE LISKOV)
+# 💎 L - Principio de sustitución de Liskov (Principle of Liskov Substitution)
 
 Este principio sugiere que *“las clases padre deben poder ser sustituidas fácilmente por sus clases hijas sin que la aplicación se rompa”*.
 
@@ -88,9 +88,9 @@ function printPeugeotSeats(peugeot: Peugeot) {
 }
 ```
 
-## ❌ MAL EJEMPLO
+## ❌ Ejemplo erroneo
 
-> Si reemplazamos el array de coches pasado por un array de una subclase de marca de coche como `citroens = Citroen[]`, esta función se romperá.
+Si reemplazamos el array de coches pasado por un array de una subclase de marca de coche como `citroens = Citroen[]`, esta función se romperá.
 
 ```ts
 export function printSeatsWrong(cars: Car[]): void {
@@ -108,9 +108,9 @@ export function printSeatsWrong(cars: Car[]): void {
 }
 ```
 
-## ✔️ BUEN EJEMPLO
+## ✔️ Ejemplo correcto
 
-> En este caso, podríamos reemplazar el array de coches pasado por un array de una subclase de marca de coche como `citroens = Citroen[]` sin que se rompa.
+En este caso, podríamos reemplazar el array de coches pasado por un array de una subclase de marca de coche como `citroens = Citroen[]` sin que se rompa.
 
 ```ts
 /*

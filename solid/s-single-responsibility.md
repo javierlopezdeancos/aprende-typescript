@@ -1,10 +1,10 @@
-# 💎 S DE SOLID (RESPONSABILIDAD ÚNICA)
+# 💎 S - Principio de responsabilidad única (Principle of Single Responsibility)
 
 El propio nombre sugiere que la *“clase debe tener una y solo una responsabilidad”*.
 
-## ❌ MAL EJEMPLO
+## ❌ Ejemplo erróneo
 
-> La clase debe tener una responsabilidad en este caso
+La clase debe tener una responsabilidad en este caso
 solo construir un coche con sus características pero no
 tener ningún método de registro en la consola, esto debería ser otra
 responsabilidad.
@@ -33,11 +33,11 @@ export class CarWrong {
 }
 ```
 
-## ✔️ BUEN EJEMPLO
+## ✔️ Ejemplo correcto
 
-> En este caso tenemos dos clases con responsabilidades divididas.
-  `CarLogger` tiene la responsabilidad de registrar en la consola algunas acciones
-  del coche inyectado por parámetros.
+En este caso tenemos dos clases con responsabilidades divididas.
+`CarLogger` tiene la responsabilidad de registrar en la consola algunas acciones
+del coche inyectado por parámetros.
 
 ```ts
 export class CarOk {
