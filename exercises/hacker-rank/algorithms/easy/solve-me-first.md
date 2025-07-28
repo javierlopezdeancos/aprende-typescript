@@ -1,4 +1,7 @@
-# Resuélveme primero
+# Resuélveme primero (Solve Me First)
+
+## URL
+Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/solve-me-first/problem)
 
 Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/a-very-big-sum)
 
@@ -46,3 +49,28 @@ b = 3
 ### Explicación
 
 `2 + 3 = 5`
+
+## Solución
+
+```typescript
+function solveMeFirst(a = 0, b = 0): number | null {
+  if (a >= 1 && b <= 1000) {
+    return a + b;
+  } else if (a >= 1 && b > 1000) {
+    return a;
+  } else if (a < 1 && b <= 1000) {
+    return b;
+  } else {
+    return null;
+  }
+}
+
+console.log(solveMeFirst(100, 1000));
+console.log(solveMeFirst(2, 3));
+```
+
+## Código
+[solve-me-first.ts](./solve-me-first.ts)
+
+## Tests
+[solve-me-first.test.ts](./solve-me-first.test.ts)

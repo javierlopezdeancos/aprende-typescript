@@ -1,5 +1,6 @@
-# Más Menos
+# Más Menos (Plus Minus)
 
+## URL
 Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/plus-minus)
 
 Dado un array de enteros, calcula las proporciones de sus elementos que son positivos, negativos y cero. Imprime el valor decimal de cada fracción en una nueva línea con 6 decimales.
@@ -53,3 +54,45 @@ STDIN           Función
 Hay **3** números positivos, **2** números negativos y **1** cero en el array.
 
 Las proporciones de aparición son positivas: **3/6=0.500000**, negativas:**2/6=0.333333** y ceros: **1/6=0.166667**.
+
+## Código
+
+```typescript
+type Coefficient = {
+  positive: string;
+  negative: string;
+  zero: string;
+};
+
+function plusMinus(values: number[]): Coefficient {
+  let positives = 0;
+  let negatives = 0;
+  let zeros = 0;
+
+  for (const value of values) {
+    if (value > 0) {
+      positives++;
+    } else if (value < 0) {
+      negatives++;
+    } else {
+      zeros++;
+    }
+  }
+
+  const positiveCoefficient = positives / values.length;
+  const negativeCoefficient = negatives / values.length;
+  const zeroCoefficient = zeros / values.length;
+
+  return {
+    positive: positiveCoefficient.toFixed(6),
+    negative: negativeCoefficient.toFixed(6),
+    zero: zeroCoefficient.toFixed(6),
+  };
+}
+```
+
+## Código
+[plus-minus.ts](./plus-minus.ts)
+
+## Tests
+[plus-minus.test.ts](./plus-minus.test.ts)

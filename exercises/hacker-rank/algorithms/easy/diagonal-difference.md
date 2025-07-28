@@ -1,5 +1,6 @@
-# Diferencia diagonal
+# Diferencia diagonal (Diagonal Difference)
 
+## URL
 Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/diagonal-difference)
 
 Dada una matriz cuadrada, calcula la diferencia absoluta entre las sumas de sus diagonales.
@@ -78,4 +79,35 @@ La diagonal secundaria es:
 Suma de la diagonal secundaria: 4 + 5 + 10 = 19
 Diferencia: |4 - 19| = 15
 
-**Nota**: |x| es el valor absoluto de x
+> [!NOTE]
+> |x| es el valor absoluto de x
+
+## Solución
+
+```typescript
+function diagonalDifference(matrix: number[][]): number {
+  let diagonalLeft = [];
+  let diagonalRight = [];
+
+  for (let i = 0; i < matrix.length; i++) {
+    diagonalLeft.push(matrix[i][i]);
+    diagonalRight.push(matrix[i][matrix.length - 1 - i]);
+  }
+
+  let sumLeftDiagonal = diagonalLeft.reduce((acc, cur) => {
+    return acc + cur;
+  });
+
+  let sumRightDiagonal = diagonalRight.reduce((acc, cur) => {
+    return acc + cur;
+  });
+
+  return Math.abs(sumRightDiagonal - sumLeftDiagonal);
+}
+````
+
+## Código
+[diagonal-difference.ts](./diagonal-difference.ts)
+
+## Tests
+[diagonal-difference.test.ts](./diagonal-difference.test.ts)

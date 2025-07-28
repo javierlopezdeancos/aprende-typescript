@@ -1,5 +1,6 @@
-# Suma simple de un array
+# Suma simple de un array (Simple Array Sum)
 
+## URL
 Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/simple-array-sum/)
 
 Dado un array de enteros, encuentra la suma de sus elementos.
@@ -43,3 +44,29 @@ Imprime la suma de los elementos del array como un único entero.
 ## Explicación
 
 Imprimimos la suma de los elementos del array `1 + 2 + 3 + 4 + 10 + 11 = 31`
+
+## Solución
+
+```typescript
+function simpleArraySum(ar: number[]): number {
+  var sum = ar.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue;
+  });
+
+  return sum;
+}
+
+console.log(`
+/**************************************/
+/*         simpleArraySum             */
+/**************************************/
+`);
+
+console.log(simpleArraySum([1, 2, 3, 4, 10, 11])); // 31
+```
+
+## Código
+[simple-array-sum.ts](./simple-array-sum.ts)
+
+## Tests
+[simple-array-sum.test.ts](./simple-array-sum.test.ts)

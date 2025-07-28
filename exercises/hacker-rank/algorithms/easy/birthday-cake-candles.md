@@ -1,4 +1,4 @@
-# Velas de tarta de cumpleaños
+# Velas de tarta de cumpleaños (Birthday Cake Candles)
 
 Estás a cargo de la tarta para el cumpleaños de un niño. Has decidido que la tarta tendrá una vela por cada año de su edad total. Solo podrán apagar las velas más altas. Cuenta cuántas velas son las más altas.
 
@@ -47,3 +47,26 @@ La segunda línea contiene enteros separados por espacios, donde cada entero des
 **Explicación 0**
 
 Las alturas de las velas son [3,2,1,3]. Las velas más altas miden 3 unidades, y hay 2 de ellas.
+
+## Solución
+
+```typescript
+function birthdayCakeCandles(candles: number[]): number {
+  let max = Math.max(...candles);
+  let count = 0;
+
+  for (let i = 0; i < candles.length; i++) {
+    if (candles[i] === max) {
+      count++;
+    }
+  }
+
+  return count;
+}
+```
+
+## Código
+[birthday-cake-candles.ts](./birthday-cake-candles.ts)
+
+## Tests
+[birthday-cake-candles.test.ts](./birthday-cake-candles.test.ts)

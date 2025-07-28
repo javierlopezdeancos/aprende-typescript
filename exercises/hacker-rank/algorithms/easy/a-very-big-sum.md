@@ -1,5 +1,6 @@
-# Una suma muy grande
+# Una suma muy grande (A very big sum)
 
+## URL
 Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/a-very-big-sum)
 
 En este desafío, se te pide que calcules e imprimas la suma de los elementos de un array, teniendo en cuenta que algunos de esos enteros pueden ser bastante grandes.
@@ -40,3 +41,19 @@ Devuelve la suma entera de los elementos del array.
 ```
 
 _Nota_: Cuando sumamos varios valores enteros, la suma resultante puede exceder el [rango máximo](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER). Es posible que necesites usar un entero largo
+
+## Solución
+
+```typescript
+function aVeryBigSum(values: number[]): number {
+  return values.reduce((acumulator, currentValue) => acumulator + currentValue);
+}
+
+console.log(`
+/**************************************/
+/*            aVeryBigSum             */
+/**************************************/
+`);
+
+console.log(aVeryBigSum([1000000001, 1000000002, 1000000003, 1000000004, 1000000005]));
+```

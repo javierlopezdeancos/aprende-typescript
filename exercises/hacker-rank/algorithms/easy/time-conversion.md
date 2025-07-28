@@ -1,4 +1,4 @@
-# Conversión de hora
+# Conversión de hora (Time conversion)
 
 Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/time-conversion)
 

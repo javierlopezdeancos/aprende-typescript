@@ -1,5 +1,6 @@
-# Suma mínima y máxima
+# Suma mínima y máxima (Mini Max Sum)
 
+## URL
 Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/mini-max-sum)
 
 Dados cinco enteros positivos, encuentra los valores mínimo y máximo que se pueden calcular sumando exactamente cuatro de los cinco enteros. Luego, imprime los respectivos valores mínimo y máximo como una sola línea de dos enteros largos separados por espacios.
@@ -21,7 +22,6 @@ Completa la función `miniMaxSum` en el editor de abajo.
 `miniMaxSum` tiene los siguientes parámetros:
 
 * *arr: un array de 5 enteros*
-
 
 **Imprimir**
 
@@ -51,3 +51,39 @@ Imprime dos enteros largos separados por espacios que denoten los respectivos va
 ```
 10 14
 ```
+
+## Solución
+
+```typescript
+function miniMaxSum(nbs: number[]): string {
+  let max: number = 0;
+  let min: number = 0;
+
+  for (let i = 0; i < nbs.length; i++) {
+    const nb = nbs[i];
+    const subNbs = nbs.filter((subNb, index) => index !== i);
+
+    let subSum: number = 0;
+
+    for (let j = 0; j < subNbs.length; j++) {
+      subSum = subSum + subNbs[j];
+    }
+
+    if (subSum > max || i === 0) {
+      max = subSum;
+    }
+
+    if (subSum < min || i === 0) {
+      min = subSum;
+    }
+  }
+
+  return `${min} ${max}`;
+}
+````
+
+## Código
+[mini-max-sum.ts](./mini-max-sum.ts)
+
+## Tests
+[mini-max-sum.test.ts](./mini-max-sum.test.ts)

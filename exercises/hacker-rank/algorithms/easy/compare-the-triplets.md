@@ -1,5 +1,6 @@
-# Comparar los tripletes
+# Comparar los tripletes (Compare the triplets)
 
+## URL
 Echa un vistazo a la descripción completa del [ejercicio en HackerRank](https://www.hackerrank.com/challenges/compare-the-triplets)
 
 Alice y Bob crearon cada uno un problema para HackerRank. Un revisor califica los dos desafíos, otorgando puntos en una escala del 1 al 100 para tres categorías: claridad del problema, originalidad y dificultad.
@@ -78,3 +79,35 @@ La segunda línea contiene 3 enteros separados por espacios, b[0], b[1] y b[2], 
 ```
 2 1
 ```
+
+## Solución
+
+```typescript
+export function compareTriplets(alice: number[], bob: number[]): number[] {
+  let aliceScore = 0;
+  let bobScore = 0;
+
+  alice.forEach((ratingItem: number, i: number): void => {
+    const aliceRatingItem = alice[i];
+    const bobRatingItem = bob[i];
+
+    if (aliceRatingItem === bobRatingItem) {
+      return;
+    }
+
+    if (aliceRatingItem > bobRatingItem) {
+      aliceScore += 1;
+    } else {
+      bobScore += 1;
+    }
+  });
+
+  return [aliceScore, bobScore];
+}
+```
+
+## Código
+[compare-the-triplets.ts](./compare-the-triplets.ts)
+
+## Tests
+[compare-the-triplets.test.ts](./compare-the-triplets.test.ts)
