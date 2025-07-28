@@ -57,3 +57,9 @@ console.log(`
 
 console.log(aVeryBigSum([1000000001, 1000000002, 1000000003, 1000000004, 1000000005]));
 ```
+
+## Código
+[a-very-big-sum.ts](./a-very-big-sum.ts)
+
+## Tests
+[a-very-big-sum.test.ts](./a-very-big-sum.test.ts)
