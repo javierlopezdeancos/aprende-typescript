@@ -9,11 +9,11 @@
     - [Utility Types](advanced/advanced.md#utility-types)
     - [Mapped Types](advanced/advanced.md#mapped-types)
   - Principios solid
-    - [Single Responsibility](solid/s-single-responsibility.md)
-    - [Open/Closed](solid/o-open-closed.md)
-    - [Liskov Substitution](solid/l-liskov-substitution.md)
-    - [Interface Segregation](solid/i-interface-segregation.md)
-    - [Dependency Inversion](solid/d-dependency-inversion.md)
+    - [S - Responsabilidad única](solid/s-single-responsibility.md)
+    - [O - Abierto/Cerrado](solid/o-open-closed.md)
+    - [L - Sustitución de Liskov](solid/l-liskov-substitution.md)
+    - [I - Segregación de Interfaces](solid/i-interface-segregation.md)
+    - [D - Inversión de Dependencias](solid/d-dependency-inversion.md)
   - Patrones de diseño
     - Comportamiento
       - [Iterator](patterns/behavioral/iterator.md)

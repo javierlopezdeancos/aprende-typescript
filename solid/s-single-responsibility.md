@@ -1,4 +1,4 @@
-# 💎 S - Principio de responsabilidad única (Principle of Single Responsibility)
+# 💎 S - Responsabilidad única
 
 El propio nombre sugiere que la *“clase debe tener una y solo una responsabilidad”*.
 

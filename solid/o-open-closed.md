@@ -1,4 +1,4 @@
-# 💎 O - Principio Abierto/Cerrado (Principle open-closed)
+# 💎 O - Abierto/Cerrado
 
 Este principio sugiere que *"las entidades de software (clases, módulos y funciones) deben estar abiertas a la extensión, pero cerradas a la modificación"*.
 

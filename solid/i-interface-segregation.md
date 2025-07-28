@@ -1,4 +1,4 @@
-# I - Principio de segregación de interfaces (Principle of Interface Segregation)
+# I - Segregación de Interfaces
 
 Este principio sugiere que *“muchas interfaces específicas del cliente son mejores que una interfaz general”*.
 

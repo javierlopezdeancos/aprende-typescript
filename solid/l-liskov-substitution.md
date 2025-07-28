@@ -1,4 +1,4 @@
-# 💎 L - Principio de sustitución de Liskov (Principle of Liskov Substitution)
+# 💎 L - Sustitución de Liskov
 
 Este principio sugiere que *“las clases padre deben poder ser sustituidas fácilmente por sus clases hijas sin que la aplicación se rompa”*.
 

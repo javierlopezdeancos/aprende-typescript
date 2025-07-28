@@ -1,4 +1,4 @@
-# D - Principio de Inversión de Dependencias (Dependency Inversion Principle)
+# D - Inversión de Dependencias
 
 Este principio sugiere que *“las clases deben depender de la abstracción pero no de la concreción”*. Lo que significa que deberíamos tener un objeto de interfaz que nos ayude a comunicarnos con las clases concretas. Lo que ganamos con esto es que ocultamos la implementación real de la clase A de la clase B. Por lo tanto, si la clase A cambia, la clase B no necesita preocuparse ni saber sobre los cambios.
 
