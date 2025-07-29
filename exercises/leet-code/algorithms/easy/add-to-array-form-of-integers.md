@@ -1,5 +1,6 @@
 # Añadir a la forma de array de un entero
 
+## URL
 [URL de Leet Code](https://leetcode.com/problems/add-to-array-form-of-integer/)
 
 La forma de array de un entero num es un array que representa sus dígitos en orden de izquierda a derecha.
@@ -47,3 +48,80 @@ Explicación: 9999999999 + 1 = 10000000000
 
 [Código Fuente](./addToArrayFormOfInteger.ts)
 [Código de Prueba](./addToArrayFormOfInteger.test.ts)
+
+## Solución
+
+```typescript
+function getArrayFromInteger(int: number): number[] {
+  /**
+   * Other option to the same implementation.
+   * const s = int.toString()
+   * return s.split('').map(Number)
+   */
+  const stringToNumber = (str: string) => Number(str);
+  return Array.from(String(int), stringToNumber);
+}
+
+function getBigger(a: number[], b: number[]): number[] {
+  if (a.length >= b.length) {
+    return a;
+  }
+
+  return b;
+}
+
+function getSmaller(a: number[], b: number[]): number[] {
+  if (a.length < b.length) {
+    return a;
+  }
+
+  return b;
+}
+
+function getFilledWithZeros(nums: number[], zeros: number): number[] {
+  for (let n = zeros; n > 0; n--) {
+    nums.unshift(0);
+  }
+
+  return [...nums];
+}
+
+export function addArrayFormOfInteger(num: number[], k: number): number[] {
+  const sum = [] as number[];
+
+  const ks = getArrayFromInteger(k);
+  const bigger = getBigger(num, ks);
+  const small = getSmaller(num, ks);
+  const zerosToAddToSmall = bigger.length - small.length;
+  const smallWithZeros = getFilledWithZeros(small, zerosToAddToSmall);
+
+  let carry = 0;
+
+  for (let s = bigger.length - 1; s >= 0; s--) {
+    const ai = smallWithZeros[s] ? smallWithZeros[s] : 0;
+    const bi = bigger[s] ? bigger[s] : 0;
+    const si = ai + bi + carry;
+
+    if (si > 9) {
+      carry = 1;
+      sum[s] = si % 10;
+
+      if (s === 0) {
+        sum.unshift(1);
+        carry = 0;
+      }
+    } else {
+      carry = 0;
+      sum[s] = si;
+    }
+  }
+
+  return sum;
+}
+```
+
+## Código
+[add-to-array-form-of-integer.ts](./add-to-array-form-of-integer.ts)
+
+## Tests
+[add-to-array-form-of-integer.test.ts](./add-to-array-form-of-integer.test.ts)

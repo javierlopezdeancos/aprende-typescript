@@ -63,10 +63,10 @@
           - [Add array form of integer](exercises/leet-code/algorithms/easy/add-to-array-form-of-integers.md)
           - [Add binary](exercises/leet-code/algorithms/easy/add-binary.md)
           - [Plus one](exercises/leet-code/algorithms/easy/plus-one.md)
-          - [Roman to integer](exercises/leet-code/algorithms/easy/roman-to-integer.md)
+          - [De numero romano a numero entero](exercises/leet-code/algorithms/easy/roman-to-integer.md)
         - Medium
           - [Add two numbers](exercises/leet-code/algorithms/medium/add-two-numbers.md)
-          - [Multiply strings](https://leetcode.com/problems/multiply-strings/)
+          - [Multiplicacion de cadenas de texto](https://leetcode.com/algorithms/medium/multiply-strings/)
           - [Longest substring without repeating characters](exercises/leet-code/algorithms/medium/longest-substring-without-repeating-characters.md)
     - [HackerRank](https://www.hackerrank.com)
       - Algorithms

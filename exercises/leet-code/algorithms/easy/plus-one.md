@@ -1,5 +1,6 @@
 # Más Uno
 
+## URL
 [Enlace de Leet Code](https://leetcode.com/problems/plus-one/)
 
 Dado un array no vacío de dígitos decimales que representan un entero no negativo, incrementa en uno el entero.
@@ -40,3 +41,28 @@ Salida: [1]
 
 [Código Fuente](./plusOne.ts)
 [Código de Pruebas](./plusOne.test.ts)
+
+## Solución
+```typescript
+function plusOne(digits: number[]): number[] {
+  for (let d = digits.length - 1; d >= 0; d--) {
+    digits[d]++;
+
+    if (digits[d] > 9) {
+      digits[d] = 0;
+    } else {
+      return digits;
+    }
+  }
+
+  digits.unshift(1);
+
+  return digits;
+}
+````
+
+## Código
+[plus-one.ts](./plus-one.ts)
+
+## Tests
+[plus-one.test.ts](./plus-one.test.ts)
