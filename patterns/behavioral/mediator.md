@@ -1,5 +1,5 @@
 - [El Patrón Mediador](#el-patr%C3%B3n-mediador)
-  - [Usando el mediador](#usando-el-mediador)
+  - [Usando el patrón Mediator](#usando-el-patr%C3%B3n-mediador)
   - [Estructura](#estructura)
   - [Ejemplo](#ejemplo)
   - [Ejemplo en vivo](#ejemplo-en-vivo)
@@ -29,7 +29,7 @@ Utilizar el patrón Mediador aporta varias ventajas:
 
 - Puedes reutilizar componentes individuales con mayor facilidad.
 
-## Usando el mediador
+## Usando el patrón mediador
 
 Los patrones Mediador son útiles en el desarrollo de formularios complejos. Tomemos como ejemplo una página en la que ingresas opciones para hacer una reserva de vuelo. Una regla simple del Mediador sería: debes ingresar una fecha de salida válida, una fecha de regreso válida, la fecha de regreso debe ser posterior a la fecha de salida, un aeropuerto de salida válido, un aeropuerto de llegada válido, un número válido de viajeros, y solo entonces se puede activar el botón de búsqueda.
 
