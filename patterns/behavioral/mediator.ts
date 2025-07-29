@@ -11,12 +11,12 @@ interface Mediator {
  * Concrete Mediators implement cooperative behavior by coordinating several
  * components.
  */
-class ChatChannel implements Mediator {
-  private pilot: Pilot;
+class ChatChannelMediator implements Mediator {
+  private pilot: PilotUser;
 
-  private airTrafficController: AirTrafficController;
+  private airTrafficController: AirTrafficControllerUser;
 
-  constructor(pilot: Pilot, airTrafficController: AirTrafficController) {
+  constructor(pilot: PilotUser, airTrafficController: AirTrafficControllerUser) {
     this.pilot = pilot;
     this.pilot.setMediator(this);
 
@@ -28,14 +28,10 @@ class ChatChannel implements Mediator {
     const time = new Date();
     const sender = user.getName();
 
-    if (user instanceof Pilot) {
-      this.airTrafficController.answerToPilot(
-        `${time} [${sender}]: ${message} - [${this.airTrafficController.getName()}]: oki, I will answer you soon`
-      );
-    } else if (user instanceof AirTrafficController) {
-      this.pilot.answerToAirTrafficController(
-        `${time} [${sender}]: ${message} - [${this.pilot.getName()}]: message received, I'll take care of it`
-      );
+    if (user instanceof PilotUser) {
+      this.airTrafficController.traceConversation(sender, message, time);
+    } else if (user instanceof AirTrafficControllerUser) {
+      this.pilot.traceConversation(sender, message, time);
     }
   }
 }
@@ -67,33 +63,34 @@ class User {
   }
 }
 
-class Pilot extends User {
+class PilotUser extends User {
   public type = 'Pilot';
 
   constructor(name: string, mediator?: Mediator) {
     super(name, mediator);
   }
 
-  public answerToAirTrafficController(message: string): void {
-    this.send(message);
+  public traceConversation(sender: string, message: string, time: Date): void {
+    console.log(`${time} [${sender}]: ${message} - [${this.getName()}]: message received, I'll take care of it`);
   }
 }
 
-class AirTrafficController extends User {
+class AirTrafficControllerUser extends User {
   public type = 'Air Traffic Controller';
 
   constructor(name: string, mediator?: Mediator) {
     super(name, mediator);
   }
 
-  public answerToPilot(message: string): void {
-    this.send(message);
+  public traceConversation(sender: string, message: string, time: Date): void {
+    console.log(`${time} [${sender}]: ${message} - [${this.getName()}]: oki, I will answer you soon`);
   }
 }
 
-const pilot = new Pilot('John');
-const airTrafficController = new AirTrafficController('Jane');
-const chatChannel = new ChatChannel(pilot, airTrafficController);
+const pilot = new PilotUser('John');
+const airTrafficController = new AirTrafficControllerUser('Jane');
+
+const chatChannel = new ChatChannelMediator(pilot, airTrafficController);
 
 pilot.send('Hello, I am ready for takeoff!');
 airTrafficController.send('Roger that, you are cleared for takeoff!');

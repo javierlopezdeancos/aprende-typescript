@@ -1,5 +1,6 @@
 - [El Patrón Mediador](#el-patr%C3%B3n-mediador)
   - [Usando el mediador](#usando-el-mediador)
+  - [Estructura](#estructura)
   - [Ejemplo](#ejemplo)
   - [Ejemplo en vivo](#ejemplo-en-vivo)
   - [Ejemplo de código](#ejemplo-de-c%C3%B3digo)
@@ -34,6 +35,61 @@ Los patrones Mediador son útiles en el desarrollo de formularios complejos. Tom
 
 Otro ejemplo de Mediador es el de una torre de control en un aeropuerto que coordina las llegadas y salidas de los aviones.
 
+## Estructura
+
+```mermaid
+classDiagram
+direction TB
+    class Mediator {
+     +notify(user: User, message: string) void
+    }
+
+    class ChatChannelMediator {
+     - pilot: Pilot
+     - airTrafficController: AirTrafficController
+     +notify(user: User, message: string) void
+    }
+
+    class PilotUser {
+     - name: string
+     - mediator: Mediator
+     +getName() string
+     +setMediator(mediator: Mediator) void
+     +send(message: string) void
+     +answerToAirTrafficController(message: string) void
+    }
+
+    class AirTrafficControllerUser {
+     - name: string
+     - mediator: Mediator
+     +getName() string
+     +setMediator(mediator: Mediator) void
+     +send(message: string) void
+     +answerToPilot(message: string) void
+    }
+
+    class User {
+     - name: string
+     - mediator: Mediator
+     +getName() string
+     +setMediator(mediator: Mediator) void
+     +send(message: string) void
+    }
+
+ <<Interface>> Mediator
+ <<Mediator>> ChatChannelMediator
+ <<User>> PilotUser
+ <<User>> AirTrafficControllerUser
+ <<Class>> User
+
+    ChatChannelMediator ..|> Mediator
+    PilotUser ..|> User
+    AirTrafficControllerUser ..|> User
+    PilotUser --> ChatChannelMediator
+    AirTrafficControllerUser --> ChatChannelMediator
+    User --> ChatChannelMediator
+```
+
 ## Ejemplo
 
 ```typescript
@@ -41,12 +97,12 @@ interface Mediator {
   logMessage(user: User, message: string): void;
 }
 
-class ChatChannel implements Mediator {
-  private pilot: Pilot;
+class ChatChannelMediator implements Mediator {
+  private pilot: PilotUser;
 
-  private airTrafficController: AirTrafficController;
+  private airTrafficController: AirTrafficControllerUser;
 
-  constructor(pilot: Pilot, airTrafficController: AirTrafficController) {
+  constructor(pilot: PilotUser, airTrafficController: AirTrafficControllerUser) {
     this.pilot = pilot;
     this.pilot.setMediator(this);
 
@@ -58,14 +114,10 @@ class ChatChannel implements Mediator {
     const time = new Date();
     const sender = user.getName();
 
-    if (user instanceof Pilot) {
-      this.airTrafficController.answerToPilot(
-        `${time} [${sender}]: ${message} - [${this.airTrafficController.getName()}]: oki, I will answer you soon`
-      );
-    } else if (user instanceof AirTrafficController) {
-      this.pilot.answerToAirTrafficController(
-        `${time} [${sender}]: ${message} - [${this.pilot.getName()}]: message received, I'll take care of it`
-      );
+    if (user instanceof PilotUser) {
+      this.airTrafficController.traceConversation(sender, message, time);
+    } else if (user instanceof AirTrafficControllerUser) {
+      this.pilot.traceConversation(sender, message, time);
     }
   }
 }
@@ -93,33 +145,34 @@ class User {
   }
 }
 
-class Pilot extends User {
+class PilotUser extends User {
   public type = 'Pilot';
 
   constructor(name: string, mediator?: Mediator) {
     super(name, mediator);
   }
 
-  public answerToAirTrafficController(message: string): void {
-    this.send(message);
+  public traceConversation(sender: string, message: string, time: Date): void {
+    console.log(`${time} [${sender}]: ${message} - [${this.getName()}]: message received, I'll take care of it`);
   }
 }
 
-class AirTrafficController extends User {
+class AirTrafficControllerUser extends User {
   public type = 'Air Traffic Controller';
 
   constructor(name: string, mediator?: Mediator) {
     super(name, mediator);
   }
 
-  public answerToPilot(message: string): void {
-    this.send(message);
+  public traceConversation(sender: string, message: string, time: Date): void {
+    console.log(`${time} [${sender}]: ${message} - [${this.getName()}]: oki, I will answer you soon`);
   }
 }
 
-const pilot = new Pilot('John');
-const airTrafficController = new AirTrafficController('Jane');
-const chatChannel = new ChatChannel(pilot, airTrafficController);
+const pilot = new PilotUser('John');
+const airTrafficController = new AirTrafficControllerUser('Jane');
+
+const chatChannel = new ChatChannelMediator(pilot, airTrafficController);
 
 pilot.send('Hello, I am ready for takeoff!');
 airTrafficController.send('Roger that, you are cleared for takeoff!');
@@ -128,16 +181,23 @@ airTrafficController.send('Roger that, you are cleared for takeoff!');
 Output:
 
 ```text
-// Output:
+Tue Jul 22 2025 01:09:16 GMT+0200 (hora de verano de Europa central)
+[John]: Hello, I am ready for takeoff! - [Jane]: oki, I will answer you soon
 
-// "Tue Jul 22 2025 01:09:16 GMT+0200 (hora de verano de Europa central) [John]: Hello, I am ready for takeoff! - [Jane]: oki, I will answer you soon"
-
-// "Tue Jul 22 2025 01:09:16 GMT+0200 (hora de verano de Europa central) [Jane]: Roger that, you are cleared for takeoff! - [John]: message received, I'll take care of it"
+Tue Jul 22 2025 01:09:16 GMT+0200 (hora de verano de Europa central)
+[Jane]: Roger that, you are cleared for takeoff! - [John]: message received, I'll take care of it
 ```
 
 ## Ejemplo en vivo
 
-[Ejemplo en vivo](https://www.typescriptlang.org/play/?#code/PQKhCgAIUgVALAppAsogJgSwIYBcD2ATpJgHa6KEBm2AxsuorQDbaGIDOk2kAtornj50kAK4cMkAEYBPSLXy8ADvlKJyXApFL5cmKnMGIoMfljxFuU-KNyQAbm0w2uie+twcAdHCSoMOATEvNhy7HR2WkYSkG4eXNik6CaQStgcmn6IAB5Mts6kkFq6SMQKyqrxXibA4GQU1HTIaOZBkADeUJDM+ADmaBnYvYgAFOKUAFyQAKoShAA0fJwcQ4hTHLiEZL0AlFP2+JjoANzgAL7g4KAQ0JAAwqq07BT+rURcmMrMiPzk8vj4JSUPCYdzSRDwbD2ZzEWT-IhYUgg0i9SASdyEbDMFLlFRqDTVaC1FjpLh3SG4cmJNTMEhfH7xV6BSydSCpLaOF5KTA9XBTAAKPN0py6Sg5eGQ2EwhFgmKoVEwtAe5EI+GY30IUwAgtLZdh5YrlZs1RqRWyFKQNoRRLQgiNubyBULcIspTK5QqlapjerJpAde79Z6jarfYQdh0umzBJhvA7dJAALypZ2nNnR+Cxrzx3BeCS4FrMwgjGMcHZm9OlrxuvUGr0qk2UJPcXUew3e0OmqNFTPeGtt+s+jV5gSFizF0vlroXUWiKTMRXdPoDFbDMZzKazSiLfiDYbrTbbPYOQ4iVnpi0bIqfZDJtQAd0gABEJSMp+n-pa7BIkk3k+NCC8YZcAAOWwfg3wrNl9EgdcmzIDZEnofAqEgQVeQjc8Pyrfsg3bBswy8TYmmVDEVj0VQRh-RgFiWPdEEWPR+HfdMzliZgYhguDiAQ3AkMQFD-VbPDB07ShMO7DMsxzIjMXoUjKHIgoqPUGid2WVZGJvFi2QuXTzkua4UgQZAtzKVgMnZfBoUYTJkCkdJFyoURSFtAosUwXA5EEjYiG2bgljeQgAHIOBSXj+JIS0jmQADIHwKQACsmE8QkQGJCyuDMyM2TFXQUskMwiymMcggrMVQQlbRwLWNFDxRCtL02G07SRfgDy2FF1KCgB+EqAnHCTsN7Lw2tvar+DTSsRqK8dm1moIAEIppnXK5wXWhIGAsCIOPK1-KwyBnlEQhCirMaVsuNb50XfNSqIEYFqIfqguPA4jhy6asye4hkx+y7ZxuzbqMejT9zqzrdn2U9Pqk7wfq8Hp+jB0ZS3U+iWIuGcSUs9CExyCgkiyuZPqUdbFy8oFm2CvHcGCxrVCtFqHrGjrtm6os+qZQbYbRUQgWLMaOcGgHro2oo5MQBTCCUyjqL9fauro1dasV3otPa58qremHDsvNVEERvoRgAAwAEnaJjEDYgBtC35cIM4AF0pgt3cVbYgBaSA7ctkbtpqt9namd3ViOphEFBDBFgASWC9UimwABrZBaDYZBBM8k3MYM8Aca4ANa2DDtG2IAnVOJptzzJoGihkKnk2CgM4AHe4S7Demrs-JnbRZmq2aVn6ufu8NeY4fnKBGIXAqLHPAfF4j5NUMiQTl1SFfq9XldWAet6tqYXxeHWPr1xmDaN3pTYtq3bft9fHZdyA3ZRr2fev-2BB20YdmD+Kk8wWOkB7w8lpIkDg94mwyBsGiAEpBs6XWxozOwOZmwPjQs6EYwUABS+B4CkGClOJqLZAx1hDKXVBiBHyFwHGQsMmCsGJEQAQkURDaAUipKQGkFDHxUkpJCThiBmD2mdK6YSpD24ainOAGSINgoAAlBE9EAeBcO2B0ByCoJYPiKcUJUEWsw8AuFxEEWHLIgASn0Jsgg8CLCgaIbg7B5DfHTiITRxBtECXlPoqcQA)
+```tsx
+/**
+ * The Mediator interface declares a method used by components to notify the
+ * mediator about various events. The Mediator may react to these events and
+ * pass the execution to other components....
+```
+
+[Playground Link](https://www.typescriptlang.org/play/?#code/PQKhCgAIUgVALAppAsogJgSwIYBcD2ATpJgHa6KEBm2AxsuorQDbaGIDOk2kAtornj50kAK4cMkAEYBPSLXy8ADvlKJyXApFL5cmKnMGIoMfljxFuU-KNyQAbm0w2uie+twcAdHCSoMOATEvNhy7HR2WkYSkG4eXNik6CaQStgcmn6IAB5Mts6kkFq6SMQKyqrxXibA4GQU1HTIaOZBkADeUJDM+ADmaBnYvYgAFOKUAFyQAKoShAA0fJwcQ4hTHLiEZL0AlFP2+JjoANzgAL7g4KAQ0JAAwqq07BT+rURcmMrMiPzk8vj4JSUPCYdzSRDwbD2ZzEWT-IhYUgg0i9SASdyEbDMFLlFRqDTVaC1FjpLh3SG4cmJNTMFqBSyfJTfX6eV704idSCpLaOF5KTA9XBTAAKAt0s0opy6Sh5eGQ2EwhFgmKoVEwtAe5EI+GY30IUwAgorldhVerNZsdXqJYQpVyFKQNoRRLQgiN+YKRWLcDbFgqlSq1RrVJbdZNIEaA6agxbtWHCDadh0ulzBJhvB7dJAALypb2nLmp+DpryZ3BeCS4OkWQgjNMcHZ2wv1rz+k1m4Naq2UHPcY2B80huN6gvN4veNsDzuhvUVgTVt31xtdC7S0RSZjq7p9AYrYZjOZTX1LQbDdabbZ7ByHEScwsOjZFT7IXNqADukAAInKRsvC-9HTsCQkh7XNxkILxhlwAA5bB+F-JsuX0SADx7MgNkSeh8CoSBRUFRNk3-IsS0naNBy7eMvE2JpNQxFY9FUEZgMYBYTz3RBFj0fg-0LM5YmYGJkNQ4h0NwTDEGwiN+zI6dh0oAi73-FsyyozF6Foyh6IKJj1BYxZ+FPDin240cuQuMzzkua4UgQZAbXkVgMm5fBoUYTJkCkdItyoURSFdAosUwXA5EkjYiG2bgljeQgAHIOBSUTxJIR0jmQcDIHwKQACsmE8QkQGJRyuHsu8ZV0XLJDMdkpgXIgmxlUE5W0OC1jRC8USbB9NhdN0kX4c8thRfSAhrAB+GqRqCJNFKKccvD6l9mv4UzZpLKqa17daggAQlHVcuSUddN1oSAoNg+CrydCKZueURCEKFsFr2y4DqOrdK1q2stqICboqvA4jkIsc1smyxc2+20Vxe1I3pO5iRgM9iBsvfYbyB4jvAhrwen6ZZVjrcdhsMniLlXEknLw8U5libIKCSYrqdK2GihkIFexiyncBizrVCdHqiBGBbkaGqL2XGtka2mlM0VEIFawW4a-uetcNy3aj1NUOiQUY5jwyukXEdWYXek458pm-Ch-rRmaHx1RBsb6EYAAMABJ2i4xA+IAbTd3XCDOABdKY3cN4Y+IAWkgH33bms6Wt-QOplD5B2HoUEMEWABJGLdSKbAAGtkFoNhkEkoKnZJyzwHJrhI3bGMh27BNqZyOn0AZnsmdVk7grZ3MYsjOAp3uRv4256GuudV0BaFtrBpN0Wxt+9kpf-DhZcoQWWsVlflde7uijUxANMILSdd0vX2oX5PjdN-qvzlK3AZt3m7Yd3pnbdj3vd9i--aDyAIc8Zh0gJHaOLY44XUThlfOmAs6QDfAKZg3BHRvh7DIGwaIASkArs9MmvM7Bll7O+XC3obQjBigAKXwPAUgMVlxdT7FGDssYm7EMQB+OuU5WHxnIVQxIiB6FSkYbQCkVJSA0nYR+KklJIQSMQLSUGtYyx+mkiw0eeplzgBUvDGKAAJBRPR4FwUgOEdAcgqCWDEoXbCVBtpCPAKRdRFFZy6IAEp9B7IIPAiwMGiG4OwByiAS4iEscQaxElVT2OXEAA)
 
 ## Ejemplo de código
 
