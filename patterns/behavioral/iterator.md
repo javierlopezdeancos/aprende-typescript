@@ -1,5 +1,6 @@
 - [El patron Iterator](#el-patron-iterator)
   - [Usando el patrón Iterator](#usando-el-patr%C3%B3n-iterator)
+  - [Estructura](#estructura)
   - [Ejemplo](#ejemplo)
   - [Ejemplo en vivo](#ejemplo-en-vivo)
   - [Ejemplo de código](#ejemplo-de-c%C3%B3digo)
