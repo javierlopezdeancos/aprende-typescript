@@ -1,41 +1,48 @@
-class Observable<D = any, C =  (d: D) => void> {
-  private observers: C[] = [];
+class Publisher<D = string> {
+  private subscribers: Subscriber<D>[] = [];
 
   constructor() {}
 
-  subscribe(callback: C): void {
-    this.observers.push(callback);
+  public subscribe(subscriber: Subscriber<D>): void {
+    this.subscribers.push(subscriber);
   }
 
-  unsubscribe(callback:C): void {
-    this.observers = this.observers.filter(observer => observer !== callback);
+  public unsubscribe(subscriber: Subscriber<D>): void {
+    this.subscribers = this.subscribers.filter((s) => s !== subscriber);
   }
 
-  notify(data: D): void {
-    this.observers.forEach(observer => {
-      if (typeof observer !== 'function') {
-        return;
-      }
-
-      observer(data);
+  public notify(data: D): void {
+    this.subscribers.forEach((s: Subscriber<D>) => {
+      s.update(data);
     });
   }
 }
 
-const observable = new Observable<string, (string) => void>;
+interface Subscriber<D = string> {
+  update(data: D): void;
+}
 
-const listenerOne = (data: string) => {
-  console.log('One has been notified about: ' + data);
-};
+class SubscriberOne implements Subscriber {
+  update(data: string): void {
+    console.log('LOG: One has been notified about: ' + data);
+  }
+}
 
-const listenerTwo = (data: string) => {
-  console.log('Two has been notified about: ' + data);
-};
+class SubscriberTwo implements Subscriber {
+  update(data: string): void {
+    console.info('INFO: Two has been notified about: ' + data);
+  }
+}
 
-observable.subscribe(listenerOne);
-observable.subscribe(listenerTwo);
+const publisher = new Publisher<string>();
 
-observable.notify('Hello World!');
+const subscriberOne = new SubscriberOne();
+const subscriberTwo = new SubscriberTwo();
+
+publisher.subscribe(subscriberOne);
+publisher.subscribe(subscriberTwo);
+
+publisher.notify('Hello World!');
 
 // output =>
 // 'One has been notified about: Hello World!'
