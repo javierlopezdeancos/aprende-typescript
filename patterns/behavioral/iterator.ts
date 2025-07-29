@@ -22,7 +22,7 @@ interface MyIterator<T> {
   rewind(): void;
 }
 
-interface Aggregator {
+interface MyCollection {
   // Retrieve an external iterator.
   getIterator(): MyIterator<string>;
 }
@@ -86,7 +86,7 @@ class AlphabeticalOrderIterator implements MyIterator<string> {
  * Concrete Collections provide one or several methods for retrieving fresh
  * iterator instances, compatible with the collection class.
  */
-class WordsCollection implements Aggregator {
+class WordsCollection implements MyCollection {
   private items: string[] = [];
 
   public getItems(): string[] {
