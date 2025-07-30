@@ -76,10 +76,10 @@ direction TB
  <<Interface>> Iterator
  <<Iterator>> AlphabeticalOrderIterator
 
-    AlphabeticalOrderIterator --|> Iterator : Inheritance
+    AlphabeticalOrderIterator --|> Iterator : Implements
     Collection --> Iterator : Association
     WordsCollection <|--|> AlphabeticalOrderIterator
-    WordsCollection --|> Collection : Inheritance
+    WordsCollection --|> Collection : Implements
 ```
 
 ## Ejemplo

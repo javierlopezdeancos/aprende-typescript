@@ -1,5 +1,5 @@
 interface Strategy {
-  calculate: (p: DeliverablePackage) => string;
+  calculate: (deliverablePackage: DeliverablePackage) => string;
 }
 
 type DeliverablePackage = {
@@ -11,8 +11,8 @@ type DeliverablePackage = {
 class Shipping {
   strategy: Strategy | undefined;
 
-  setStrategy(s: Strategy): void {
-    this.strategy = s;
+  setStrategy(strategy: Strategy): void {
+    this.strategy = strategy;
   }
 
   calculate(deliverablePackage: DeliverablePackage): string | null {
@@ -25,7 +25,7 @@ class Shipping {
 }
 
 class UpsStrategy implements Strategy {
-  calculate(p: DeliverablePackage): string {
+  calculate(deliverablePackage: DeliverablePackage): string {
     // calculations...
     return '$45.95';
   }

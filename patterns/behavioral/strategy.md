@@ -1,6 +1,7 @@
 - [El patrón Strategy](#el-patr%C3%B3n-strategy)
   - [Usando el patrón Strategy](#usando-el-patr%C3%B3n-strategy)
   - [Participantes del patrón Strategy](#participantes-del-patr%C3%B3n-strategy)
+  - [Estructura](#estructura)
   - [Ejemplo](#ejemplo)
   - [Ejemplo en vivo](#ejemplo-en-vivo)
   - [Ejemplo de código](#ejemplo-de-c%C3%B3digo)
@@ -26,11 +27,52 @@ Usar el patrón Strategy aporta varias ventajas:
 
 - `Strategy`: Implementa las acciones de la estrategia utilizando la interfaz Strategy.
 
+## Estructura
+
+```mermaid
+classDiagram
+direction TB
+    class Shipping {
+     -strategy: Strategy
+     +setStrategy(strategy: Strategy) void
+     +calculate(deliverablePackage: DeliverablePackage) : string
+    }
+
+    class Strategy {
+     +calculate(deliverablePackage: DeliverablePackage) string
+    }
+
+    class UpsStrategy {
+     +calculate(deliverablePackage: DeliverablePackage) string
+    }
+
+    class XpoStrategy {
+     +calculate(deliverablePackage: DeliverablePackage) string
+    }
+
+    class FedexStrategy {
+     +calculate(deliverablePackage: DeliverablePackage) string
+    }
+
+ <<Class>> Shipping
+ <<Interface>> Strategy
+ <<Strategy>> UpsStrategy
+ <<Strategy>> XpoStrategy
+ <<Strategy>> FedexStrategy
+
+    UpsStrategy --o Shipping : Aggregation
+    XpoStrategy --o Shipping : Aggregation
+    FedexStrategy --o Shipping : Aggregation
+    UpsStrategy --|> Strategy : Implements
+    XpoStrategy --|> Strategy : Implements
+    FedexStrategy --|> Strategy : Implements
+```
+
 ## Ejemplo
 
 ```typescript
 interface Strategy {
-  calculate: (p: DeliverablePackage) => string;
+  calculate: (deliverablePackage: DeliverablePackage) => string;
 }
 
 type DeliverablePackage = {
@@ -42,8 +84,8 @@ type DeliverablePackage = {
 class Shipping {
   strategy: Strategy | undefined;
 
-  setStrategy(s: Strategy): void {
-    this.strategy = s;
+  setStrategy(strategy: Strategy): void {
+    this.strategy = strategy;
   }
 
   calculate(deliverablePackage: DeliverablePackage): string | null {
@@ -56,7 +98,7 @@ class Shipping {
 }
 
 class UpsStrategy implements Strategy {
-  calculate(p: DeliverablePackage): string {
+  calculate(deliverablePackage: DeliverablePackage): string {
     // calculations...
     return '$45.95';
   }
@@ -128,4 +170,4 @@ class Shipping {
 
 ## Ejemplo de código
 
-[Example](./strategy.ts)
+[strategy.ts](./strategy.ts)
