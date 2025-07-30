@@ -1,8 +1,8 @@
 interface Strategy {
-  calculate: (p: Package) => string;
+  calculate: (p: DeliverablePackage) => string;
 }
 
-type Package = {
+type DeliverablePackage = {
   from: string;
   to: string;
   weight: string;
@@ -15,37 +15,37 @@ class Shipping {
     this.strategy = s;
   }
 
-  calculate(p: Package): string | null {
+  calculate(deliverablePackage: DeliverablePackage): string | null {
     if (!this?.strategy) {
       return null;
     }
 
-    return this.strategy.calculate(p);
+    return this.strategy.calculate(deliverablePackage);
   }
 }
 
 class UpsStrategy implements Strategy {
-  calculate(p: Package): string {
+  calculate(p: DeliverablePackage): string {
     // calculations...
     return '$45.95';
   }
 }
 
-class UspsStrategy implements Strategy {
-  calculate(p: Package): string {
+class XpoStrategy implements Strategy {
+  calculate(deliverablePackage: DeliverablePackage): string {
     // calculations...
     return '$39.40';
   }
 }
 
 class FedexStrategy implements Strategy {
-  calculate(p: Package): string {
+  calculate(deliverablePackage: DeliverablePackage): string {
     // calculations...
     return '$43.20';
   }
 }
 
-const package: Package = {
+const deliverablePackage: DeliverablePackage = {
   from: '76712',
   to: '10012',
   weight: 'lkg',
@@ -53,16 +53,21 @@ const package: Package = {
 
 // the 3 strategies
 const upsStrategy = new UpsStrategy();
-const uspsStrategy = new UspsStrategy();
+const xpoStrategy = new XpoStrategy();
 const fedexStrategy = new FedexStrategy();
 
 const shipping = new Shipping();
 
 shipping.setStrategy(upsStrategy);
-console.log('UPS Strategy: ' + shipping.calculate(package));
+console.log('UPS Strategy: ' + shipping.calculate(deliverablePackage));
 
-shipping.setStrategy(uspsStrategy);
-console.log('USPS Strategy: ' + shipping.calculate(package));
+shipping.setStrategy(xpoStrategy);
+console.log('XPO Strategy: ' + shipping.calculate(deliverablePackage));
 
 shipping.setStrategy(fedexStrategy);
-console.log('Fedex Strategy: ' + shipping.calculate(package));
+console.log('Fedex Strategy: ' + shipping.calculate(deliverablePackage));
+
+// Output
+// [LOG]: "UPS Strategy: $45.95"
+// [LOG]: "XPO Strategy: $39.40"
+// [LOG]: "Fedex Strategy: $43.20"

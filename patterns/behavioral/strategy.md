@@ -30,10 +30,10 @@ Usar el patrón Strategy aporta varias ventajas:
 
 ```typescript
 interface Strategy {
-  calculate: (package: Package) => string;
+  calculate: (p: DeliverablePackage) => string;
 }
 
-type Package = {
+type DeliverablePackage = {
   from: string;
   to: string;
   weight: string;
@@ -46,37 +46,37 @@ class Shipping {
     this.strategy = s;
   }
 
-  calculate(p: Package): string | null {
+  calculate(deliverablePackage: DeliverablePackage): string | null {
     if (!this?.strategy) {
       return null;
     }
 
-    return this.strategy.calculate(p);
+    return this.strategy.calculate(deliverablePackage);
   }
 }
 
 class UpsStrategy implements Strategy {
-  calculate(p: Package): string {
+  calculate(p: DeliverablePackage): string {
     // calculations...
     return '$45.95';
   }
 }
 
-class UspsStrategy implements Strategy {
-  calculate(p: Package): string {
+class XpoStrategy implements Strategy {
+  calculate(deliverablePackage: DeliverablePackage): string {
     // calculations...
     return '$39.40';
   }
 }
 
 class FedexStrategy implements Strategy {
-  calculate(p: Package): string {
+  calculate(deliverablePackage: DeliverablePackage): string {
     // calculations...
     return '$43.20';
   }
 }
 
-const package: Package = {
+const deliverablePackage: DeliverablePackage = {
   from: '76712',
   to: '10012',
   weight: 'lkg',
@@ -84,32 +84,47 @@ const package: Package = {
 
 // the 3 strategies
 const upsStrategy = new UpsStrategy();
-const uspsStrategy = new UspsStrategy();
+const xpoStrategy = new XpoStrategy();
 const fedexStrategy = new FedexStrategy();
 
 const shipping = new Shipping();
 
 shipping.setStrategy(upsStrategy);
-console.log('UPS Strategy: ' + shipping.calculate(package));
+console.log('UPS Strategy: ' + shipping.calculate(deliverablePackage));
 
-shipping.setStrategy(uspsStrategy);
-console.log('USPS Strategy: ' + shipping.calculate(package));
+shipping.setStrategy(xpoStrategy);
+console.log('XPO Strategy: ' + shipping.calculate(deliverablePackage));
 
 shipping.setStrategy(fedexStrategy);
-console.log('Fedex Strategy: ' + shipping.calculate(package));
+console.log('Fedex Strategy: ' + shipping.calculate(deliverablePackage));
 ```
 
 Output
 
 ```text
-UPS Strategy: $45.95
-USPS Strategy: $39.40
-Fedex Strategy: $43.20
+[LOG]: "UPS Strategy: $45.95"
+[LOG]: "XPO Strategy: $39.40"
+[LOG]: "Fedex Strategy: $43.20"
 ```
 
 ## Ejemplo en vivo
 
-[Ejemplo en vivo](https://www.typescriptlang.org/play/?#code/JYOwLgpgTgZghgYwgAgMpinSBzAnsgbwChlkE4AbBAVwqwgC5kAKABydQAthXXRsACogDWcbBACUyALwA+ZAGcM-ANxEAvkSJhcrFFx58QgkWJTTCJZDCgB7ALZMlUVVbC2ny42tIB3CMDYnGCeLt4aakQIdAoKaNy8-JakzvR4HBhp+AA+yNQgACYQMKAQBZEpEGDomDi4zAoZtRB4EkwAbrbABcmkyGDcCgB0qXUyij7ImlbkVLT0bBwJRiYIouJtil7YyLkgtBS9pMAwLACEA8AKAPwjmXVSxH19UFXUUCDI+xQUk6TTz1eYHen0uw1GLVwQ1mNDokDYEkmmmm0TgsWQAFVWAoallkMB7KwKBB7BBwHFcWMnmRKLCFux4oZ+EI1mZNs4ktTSAB6bk0uZw4C2EDDIZDKykIEg5AAcgAJAAWACsQwAnEqZUiNFpUeiMQpsZTIfjCcTSeS0PdjdSYfN4QyDIljCz1pJQpyJchefy6WAhSKxeLAW8PrK5QBmVVDBUABk1VmROpicQAYmUIAAPI14E1EklksAUq05m20u0QRaMp2rV3s7ZHL1822C4WioMvEOfeUK8NDABMca1KNbYEUy2ZpnESyZzsn5l6NgcTBlAHYAGwrgCMfZlABo3B5ZZuYzHt3urP5AsFlxRhNhz+pIt6Bihw1tmthgBAFFER3lDcW+AWCAEC+JiAEfvUiK-iKo7UAaOKAeMIFgfqEFZMw0EIH+MDplmSHAaByBpkU+GQZhkTYbBY4zjshFgY6KwUVoCjjsYIxVNm9TUOhDxqFRCi2MSQwULY2DMDKGICKglqQcuyAANQ0dW0JlnCFasbRLpstBRCaSpCicYBzDwbxkJYa2QkQCJYkSRiqDSbJWTyUp+krKpAoLG5E6shsuneexhnVMZuGkVxFkilZNniTKJGZk5dQucp7nNl5bE1jpahAA)
+```tsx
+interface Strategy {
+  calculate: (p: DeliverablePackage) => string;
+}
+
+type DeliverablePackage = {
+  from: string;
+  to: string;
+  weight: string;
+};
+
+class Shipping {
+  strategy: Strategy | undefine...
+```
+
+[Playground Link](https://www.typescriptlang.org/play/?#code/JYOwLgpgTgZghgYwgAgMpinSBzAnsgbwChlkE4AbBAVwqwgC5kAKAByYBEILgA3aOACMKEAAqIA1nGwQAlMgC8APmQBnDKGwBuIgF8iRMLlYouPfpmFjJ0lAsIlkMKAHsAtk3VRNO0mBeeGiDajgDuEMDYABZggd7BOro6RAh0qqpoUcCsrJoOpF70eEzomDj4AD7I1CAAJhAwoBC1yQUQYKVFuMyqJRhdsky8LsC1+aTIYFmqAHSF5Ypqvsj6juRUtPTM9eYCVuIIUjKc3Hx7IgdHcnF5VSC0FOOkwDAsAIRTwKoA-HP95fJiBMJlB2tQoCBkPcKBRlqRVsDQWBwZDPrN5hA8DN1jQ6JBtqcLEILjYZLJlvpVqk4OlkABVViqToLYBuVgiNwQcAZZmY-BAsiUXFbdjIMxnSwkw62QZqILYJ7IAD0SsFGzxwBcIFmMxmjlISJRyAA5AASAAsAFYZgBOS3Gil6AzU2kADVYLl5eGQrPZEE53LQ-z54xxm3xOwlxOs0uOYsJ5xjV1lXjyAtIKrVwrAmu1ur1iLBEJNpoAzDaZuaAAwOxyU51pDIAMWaEAAHl78L6OVywDzg96BWG8RACbtJUnbCdx9HLjKbsFFZnh1hczqCyCi5CzebSzMAEw1x1UrXqZCRon7UmMeMzq+xuzjZzuJjGgDsADY3wBGffGgA0jj+K+35VlWv4AWEETRLEJoUBI2CQUkBiZlMKClnKZSYsAECqCkp5gNUjKdosIAQKE9LEQO3Tkvh2qEW2HokfYZEUe6nrUcwtEIARTith21GkeRyAtvUAlYXgXHJDx9FqFkOR5CxwmoPJuTBFJBiqKpmhzO0nbMNQVESbg3Gni4IgzBQLjYMwxp0qIqBBsZr7IAA1HJ2Rqdg2JCuGo4Xomc5krRRBaZ5OmqHpnGMRxxmmdq5kQJZ1m2a6ogAPJOV0LnuWFCnBD56pbAFE5BXIIV5V5ukdJxMD8Z28WqIlyU2caontll5Q5R5+XeSuEYJqV16yLRQA)
 
 ## Ejemplo de código
 
