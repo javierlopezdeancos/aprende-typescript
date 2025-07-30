@@ -1,17 +1,17 @@
-- [El Patrón Mediador](#el-patr%C3%B3n-mediador)
-  - [Usando el patrón Mediator](#usando-el-patr%C3%B3n-mediador)
+- [El Patrón Mediator](#el-patr%C3%B3n-mediator)
+  - [Usando el patrón Mediator](#usando-el-patr%C3%B3n-mediator)
   - [Estructura](#estructura)
   - [Ejemplo](#ejemplo)
   - [Ejemplo en vivo](#ejemplo-en-vivo)
   - [Ejemplo de código](#ejemplo-de-c%C3%B3digo)
 
-# El Patrón Mediador
+# El Patrón Mediator
 
 Mediator es un patrón de diseño de comportamiento que te permite reducir las dependencias caóticas entre objetos. El patrón restringe las comunicaciones directas entre los objetos, forzándolos a colaborar únicamente a través de un objeto mediador.
 
-El patrón Mediador proporciona una autoridad central sobre un grupo de objetos al encapsular cómo interactúan estos objetos. Este modelo es útil para escenarios en los que hay una necesidad de gestionar condiciones complejas en las que cada objeto es consciente de cualquier cambio de estado en cualquier otro objeto del grupo.
+El patrón Mediator proporciona una autoridad central sobre un grupo de objetos al encapsular cómo interactúan estos objetos. Este modelo es útil para escenarios en los que hay una necesidad de gestionar condiciones complejas en las que cada objeto es consciente de cualquier cambio de estado en cualquier otro objeto del grupo.
 
-El patrón mediador se presenta mejor con una analogía simple: piensa en el control de tráfico aéreo típico. La torre maneja qué aviones pueden despegar y aterrizar porque todas las comunicaciones se realizan desde los aviones a la torre de control, en lugar de entre los aviones.
+El patrón mediator se presenta mejor con una analogía simple: piensa en el control de tráfico aéreo típico. La torre maneja qué aviones pueden despegar y aterrizar porque todas las comunicaciones se realizan desde los aviones a la torre de control, en lugar de entre los aviones.
 
 Un controlador centralizado es clave para el éxito de este sistema y eso es realmente lo que es un mediador.
 
@@ -19,7 +19,7 @@ En términos del mundo real, un mediador encapsula cómo los módulos dispares i
 
 ¿Qué otras ventajas tiene para ofrecer? Bueno, los mediadores permiten que las acciones de cada módulo varíen de forma independiente, por lo que es extremadamente flexible. Si has utilizado anteriormente el patrón Observer (Pub/Sub) para implementar un sistema de difusión de eventos entre los módulos de tu sistema, encontrarás que los mediadores son relativamente fáciles de entender.
 
-Utilizar el patrón Mediador aporta varias ventajas:
+Utilizar el patrón Mediator aporta varias ventajas:
 
 - `Principio de responsabilidad única`. Puedes extraer las comunicaciones entre varios componentes dentro de un único sitio, haciéndolo más fácil de comprender y mantener.
 
@@ -29,11 +29,11 @@ Utilizar el patrón Mediador aporta varias ventajas:
 
 - Puedes reutilizar componentes individuales con mayor facilidad.
 
-## Usando el patrón mediador
+## Usando el patrón Mediator
 
-Los patrones Mediador son útiles en el desarrollo de formularios complejos. Tomemos como ejemplo una página en la que ingresas opciones para hacer una reserva de vuelo. Una regla simple del Mediador sería: debes ingresar una fecha de salida válida, una fecha de regreso válida, la fecha de regreso debe ser posterior a la fecha de salida, un aeropuerto de salida válido, un aeropuerto de llegada válido, un número válido de viajeros, y solo entonces se puede activar el botón de búsqueda.
+Los patrones Mediator son útiles en el desarrollo de formularios complejos. Tomemos como ejemplo una página en la que ingresas opciones para hacer una reserva de vuelo. Una regla simple del Mediator sería: debes ingresar una fecha de salida válida, una fecha de regreso válida, la fecha de regreso debe ser posterior a la fecha de salida, un aeropuerto de salida válido, un aeropuerto de llegada válido, un número válido de viajeros, y solo entonces se puede activar el botón de búsqueda.
 
-Otro ejemplo de Mediador es el de una torre de control en un aeropuerto que coordina las llegadas y salidas de los aviones.
+Otro ejemplo de Mediator es el de una torre de control en un aeropuerto que coordina las llegadas y salidas de los aviones.
 
 ## Estructura
 

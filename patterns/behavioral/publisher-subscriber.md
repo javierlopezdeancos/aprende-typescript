@@ -1,14 +1,13 @@
-- [El patrón Publicador-Suscriptor](#el-patr%C3%B3n-publicador-suscriptor)
-  - [El patron Publicador/Suscriptor](#el-patron-publicadorsuscriptor)
-  - [Usando el patrón Publicador/Suscriptor](#usando-el-patr%C3%B3n-publicadorsuscriptor)
+- [El patrón Publisher/Subscriber](#el-patr%C3%B3n-publishersubscriber)
+  - [Usando el patrón Publisher/Subscriber](#usando-el-patr%C3%B3n-publishersubscriber)
   - [Estructura](#estructura)
   - [Ejemplo](#ejemplo)
   - [Ejemplo en vivo](#ejemplo-en-vivo)
   - [Ejemplo de código](#ejemplo-de-c%C3%B3digo)
 
-# El patrón Publicador-Suscriptor
+# El patrón Publisher/Subscriber
 
-El patrón de mensajería publicar-suscribir (o pub/sub) es un patrón de diseño que proporciona un marco para intercambiar mensajes que permite un acoplamiento débil y la escalabilidad entre el emisor de mensajes (publicadores) y los receptores (suscriptores) en los temas a los que se suscriben.
+El patrón de mensajería publisher/subscriber (o pub/sub) es un patrón de diseño que proporciona un marco para intercambiar mensajes que permite un acoplamiento débil y la escalabilidad entre el emisor de mensajes (publicadores) y los receptores (suscriptores) en los temas a los que se suscriben.
 
 Los mensajes se envían (empujan) de un publicador a los suscriptores a medida que están disponibles. El anfitrión (publicador) publica mensajes cuando se producen eventos a los suscriptores que están suscritos a esos eventos.
 
@@ -16,22 +15,20 @@ Esto es diferente de los modelos estándar de solicitud/respuesta (extracción) 
 
 También significa que se pueden construir redes dinámicas a escala de Internet. Sin embargo, construir una infraestructura de mensajería a tal escala puede ser problemático.
 
-## El patron Publicador/Suscriptor
-
-Un patron publicador/suscriptor generalmente contiene 3 partes importantes:
+Un patron publisher/subscriber generalmente contiene 3 partes importantes:
 
 - El `Notificador` o publicador envía eventos de interés a otros objetos. Esos eventos ocurren cuando el notificador cambia su estado o ejecuta algunos comportamientos. Los notificadores contienen una infraestructura de suscripción que permite a nuevos y antiguos suscriptores abandonar la lista.
 - La `interfaz Suscriptora`declara la interfaz de notificación. En la mayoría de los casos, consiste en un único método actualizar. El método puede tener varios parámetros que permitan al notificador pasar algunos detalles del evento junto a la actualización.
 - Los `Suscriptores` concretos realizan algunas acciones en respuesta a las notificaciones emitidas por el notificador. Todas estas clases deben implementar la misma interfaz de forma que el notificador no esté acoplado a clases concretas.
 
-Utilizar el patrón publicador/suscriptor aporta varias ventajas:
+Utilizar el patrón publisher/subscriber aporta varias ventajas:
 
 - Principio de `abierto/cerrado`. Puedes introducir nuevas clases suscriptoras sin tener que cambiar el código de la clase notificador (y viceversa si hay una interfaz notificador).
 - Puedes establecer relaciones entre objetos durante el tiempo de ejecución.
 
-## Usando el patrón Publicador/Suscriptor
+## Usando el patrón Publisher/Subscriber
 
-- El patrón Observer permite que cualquier objeto que implemente la interfaz suscriptora pueda suscribirse a notificaciones de eventos en objetos notificadores. Puedes añadir el mecanismo de suscripción a tus botones, permitiendo a los clientes acoplar su código personalizado a través de clases suscriptoras personalizadas.
+- El patrón publisher/subscriber permite que cualquier objeto que implemente la interfaz suscriptora pueda suscribirse a notificaciones de eventos en objetos notificadores. Puedes añadir el mecanismo de suscripción a tus botones, permitiendo a los clientes acoplar su código personalizado a través de clases suscriptoras personalizadas.
 - Utiliza el patrón cuando algunos objetos de tu aplicación deban observar a otros, pero sólo durante un tiempo limitado o en casos específicos.
 - La lista de suscripción es dinámica, por lo que los suscriptores pueden unirse o abandonar la lista cuando lo deseen.
 

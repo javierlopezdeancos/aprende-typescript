@@ -1,15 +1,15 @@
-- [El patrón Observador](#el-patr%C3%B3n-observador)
+- [El patrón Observer](#el-patr%C3%B3n-observer)
   - [Usando el patrón observador](#usando-el-patr%C3%B3n-observador)
   - [Estructura](#estructura)
   - [Ejemplo](#ejemplo)
   - [Ejemplo en vivo](#ejemplo-en-vivo)
   - [Ejemplo de código](#ejemplo-de-c%C3%B3digo)
 
-# El patrón Observador
+# El patrón Observer
 
-Con el patrón observador, podemos suscribir ciertos objetos, los observadores, a otro objeto llamado el observable. ¡Cada vez que ocurre un evento, el observable notifica a todos sus observadores!
+Con el patrón observer, podemos suscribir ciertos objetos, los observadores, a otro objeto llamado el observable. ¡Cada vez que ocurre un evento, el observable notifica a todos sus observadores!
 
-Un patron observador generalmente contiene 2 partes importantes:
+Un patrón observer generalmente contiene 2 partes importantes:
 
 - `Suscriptores`: Un array de listeners que están suscritos a las notificaciones del notificador.
 Realizan la acción con la cual se subscribieron en respuesta a las notificaciones emitidas por el notificador. Todas estas clases deben implementar la misma interfaz de forma que el notificador no esté acoplado a clases concretas.
