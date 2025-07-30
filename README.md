@@ -1,6 +1,6 @@
 # Aprende typescript en castellano 🇪🇸
 
-![GitHub License](https://img.shields.io/github/license/javierlopezdeancos/aprende-go)
+![GitHub License](https://img.shields.io/github/license/javierlopezdeancos/aprende-typescript)
 
 ![perrete cuqui con una gorra de typescript declarando su amor por el](./assets/readme.jpg)
 
