@@ -82,12 +82,12 @@ direction TB
  <<User>> AirTrafficControllerUser
  <<Class>> User
 
-    ChatChannelMediator ..|> Mediator
-    PilotUser ..|> User
-    AirTrafficControllerUser ..|> User
-    PilotUser --> ChatChannelMediator
-    AirTrafficControllerUser --> ChatChannelMediator
-    User --> ChatChannelMediator
+    ChatChannelMediator --|> Mediator : Inheritance
+    PilotUser --|> User : Inheritance
+    AirTrafficControllerUser --|> User : Inheritance
+    PilotUser --> ChatChannelMediator : Association
+    AirTrafficControllerUser --> ChatChannelMediator : Association
+    User --> ChatChannelMediator : Association
 ```
 
 ## Ejemplo
