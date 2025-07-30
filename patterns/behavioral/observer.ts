@@ -1,4 +1,8 @@
-class Publisher<D = string> {
+export interface Subscriber<D = string> {
+  listen(data: D): void;
+}
+
+export class Observer<D = string> {
   private subscribers: Subscriber<D>[] = [];
 
   constructor() {}
@@ -12,32 +16,28 @@ class Publisher<D = string> {
   }
 
   public notify(data: D): void {
-    this.subscribers.forEach((s: Subscriber<D>) => {
-      s.update(data);
+    this.subscribers.forEach((subscriber: Subscriber<D>) => {
+      subscriber.listen(data);
     });
   }
 }
 
-interface Subscriber<D = string> {
-  update(data: D): void;
-}
-
-class SubscriberOne implements Subscriber {
-  update(data: string): void {
+class SubscriberOne implements Subscriber<string> {
+  listen(data: string): void {
     console.log('LOG: One has been notified about: ' + data);
   }
 }
 
-class SubscriberTwo implements Subscriber {
-  update(data: string): void {
+class SubscriberTwo implements Subscriber<string> {
+  listen(data: string): void {
     console.info('INFO: Two has been notified about: ' + data);
   }
 }
 
-const publisher = new Publisher<string>();
-
 const subscriberOne = new SubscriberOne();
 const subscriberTwo = new SubscriberTwo();
+
+const publisher = new Observer<string>();
 
 publisher.subscribe(subscriberOne);
 publisher.subscribe(subscriberTwo);
