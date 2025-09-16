@@ -73,7 +73,7 @@
         - Easy
           - [Una suma muy grande](exercises/hacker-rank/algorithms/easy/a-very-big-sum.md)
           - [Velas de tarta de cumpleaños](exercises/hacker-rank/algorithms/easy/birthday-cake-candles.md)
-          - [Rompiendo los récords](exercises/hacker-rank/algorithms/easy/breaking-the-records.md)
+          - [Rompiendo los récords](exercises/hacker-rank/algorithms/easy/breaking-records.md)
           - [Comparar los tripletes](exercises/hacker-rank/algorithms/easy/compare-the-triplets.md)
           - [Diferencia diagonal](exercises/hacker-rank/algorithms/easy/diagonal-difference.md)
           - [Suma mínima máxima](exercises/hacker-rank/algorithms/easy/mini-max-sum.md)
@@ -88,7 +88,7 @@
     - Real code interviews
       - [Contar duplicados](exercises/real-code-interviews/count-dupes.md)
       - [Crear un diccionario](exercises/real-code-interviews/create-dictionary.md)
-      - [Perder el contexto](exercises/real-code-interviews/lose-the-context.md)
+      - [Perder el contexto](exercises/real-code-interviews/lose-context.md)
 
 ## Instala el entorno
 
