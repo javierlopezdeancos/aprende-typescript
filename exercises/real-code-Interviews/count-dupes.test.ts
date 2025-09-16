@@ -38,7 +38,7 @@ describe('countDupes', () => {
     expect(countDupes([])).toBe(0);
   });
 
-  it('should return 3', () => {
+  it('should return 4', () => {
     expect(
       countDupes([
         'nashville',
