@@ -53,6 +53,24 @@ En este caso tenemos dos clases con responsabilidades divididas.
 del coche inyectado por parámetros.
 
 ```ts
+class Car {
+  private _wheels: string = "4";
+
+  constructor(private _brand: string, private _color?: string) {}
+
+  get brand(): string {
+    return this._brand;
+  }
+
+  get wheels(): string {
+    return this._wheels;
+  }
+
+  get color(): string | undefined {
+    return this._color;
+  }
+}
+
 interface IBrandCar extends Car {
   averagePrice: number;
 }
