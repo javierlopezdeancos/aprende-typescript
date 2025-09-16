@@ -9,29 +9,29 @@
     - [Tipos de utilidad](advanced/advanced.md#utility-types)
     - [Tipos mapeados](advanced/advanced.md#mapped-types)
   - Principios solid
-    - [S - Responsabilidad única](solid/s-single-responsibility.md)
-    - [O - Abierto/Cerrado](solid/o-open-closed.md)
-    - [L - Sustitución de Liskov](solid/l-liskov-substitution.md)
-    - [I - Segregación de Interfaces](solid/i-interface-segregation.md)
-    - [D - Inversión de Dependencias](solid/d-dependency-inversion.md)
+    - [[S] Responsabilidad única (Single Responsibility)](solid/s-single-responsibility.md)
+    - [[O] Abierto/Cerrado (Open/Closed))](solid/o-open-closed.md)
+    - [[L] Sustitución de Liskov (Liskov Substitution)](solid/l-liskov-substitution.md)
+    - [[I] Segregación de Interfaces (Interface Segregation)](solid/i-interface-segregation.md)
+    - [[D] Inversión de Dependencias (Dependency Inversion)](solid/d-dependency-inversion.md)
   - Patrones de diseño
     - Comportamiento
-      - [Iterador](patterns/behavioral/iterator.md)
-      - [Mediador](patterns/behavioral/mediator.md)
-      - [Observador](patterns/behavioral/observer.md)
-      - [Publicador-suscriptor](patterns/behavioral/publisher-subscriber.md)
-      - [Estrategia](patterns/behavioral/strategy.md)
+      - [Iterador (Iterator)](patterns/behavioral/iterator.md)
+      - [Mediador (Mediator)](patterns/behavioral/mediator.md)
+      - [Observador (Observer)](patterns/behavioral/observer.md)
+      - [Publicador-suscriptor (Publisher-Subscriber)](patterns/behavioral/publisher-subscriber.md)
+      - [Estrategia (Strategy)](patterns/behavioral/strategy.md)
     - Estructurales
-      - [Compuesto](patterns/structural/composite.md)
-      - [Decorador](patterns/structural/decorator.md)
-      - [Fachada](patterns/structural/facade.md)
-      - [Peso ligero](patterns/structural/flyweight.md)
-      - [Proxy](patterns/structural/proxy.md)
+      - [Compuesto (Composite))](patterns/structural/composite.md)
+      - [Decorador (Decorator)](patterns/structural/decorator.md)
+      - [Fachada (Facade)](patterns/structural/facade.md)
+      - [Peso ligero (Flyweight)](patterns/structural/flyweight.md)
+      - [Proxy (Proxy)](patterns/structural/proxy.md)
     - Creacionales
-      - [Constructor](patterns/creational/builder.md)
-      - [Fábrica](patterns/creational/factory.md)
-      - [Prototipo](patterns/creational/prototype.md)
-      - [Instancia única](patterns/creational/singleton.md)
+      - [Constructor (Constructor)](patterns/creational/builder.md)
+      - [Fábrica (Factory))](patterns/creational/factory.md)
+      - [Prototipo (Prototype))](patterns/creational/prototype.md)
+      - [Instancia única (Singleton))](patterns/creational/singleton.md)
   - Ejercicios
     - Algorithms
       - Linked List
@@ -87,6 +87,8 @@
           - [Subiendo en la tabla de clasificación](exercises/hacker-rank/algorithms/medium/climbing-the-leaderboard.md)
     - Real code interviews
       - [Contar duplicados](./src/real-code-interviews/count-dupes.md)
+      - [Crear un diccionario](./src/real-code-interviews/create-dictionary.md)
+      - [Perder el contexto](./src/real-code-interviews/lose-the-context.md)
 
 ## Instala el entorno
 
