@@ -86,9 +86,9 @@
         - Medium
           - [Subiendo en la tabla de clasificación](exercises/hacker-rank/algorithms/medium/climbing-the-leaderboard.md)
     - Real code interviews
-      - [Contar duplicados](./src/real-code-interviews/count-dupes.md)
-      - [Crear un diccionario](./src/real-code-interviews/create-dictionary.md)
-      - [Perder el contexto](./src/real-code-interviews/lose-the-context.md)
+      - [Contar duplicados](./src/exercises/real-code-interviews/count-dupes.md)
+      - [Crear un diccionario](./src/exercises/real-code-interviews/create-dictionary.md)
+      - [Perder el contexto](./src/exercises/real-code-interviews/lose-the-context.md)
 
 ## Instala el entorno
 
