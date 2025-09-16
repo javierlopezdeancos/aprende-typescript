@@ -2,9 +2,15 @@
 // 1. Choose a data structure for your dictionary
 //////////////////////////////////////////////////
 
-type Dictionary = Record<string, string>;
+type Entry = string;
 
-type GroupedDictionary = Record<string, string[]>;
+type EntryLength = number;
+
+type Definition = string;
+
+type Dictionary = Record<Entry, Definition>;
+
+type GroupedDictionaryEntriesByLength = Record<EntryLength, Entry[]>;
 
 const dictionary: Dictionary = {};
 
@@ -13,12 +19,12 @@ const dictionary: Dictionary = {};
 //    items in the dictionary.
 //////////////////////////////////////////////////
 
-const addEntry = (entry: string, value: string) => {
-  if (!entry || !value) {
+const addEntry = (entry: Entry, definition: Definition): void => {
+  if (!entry || !definition) {
     return;
   }
 
-  dictionary[entry] = value;
+  dictionary[entry] = definition;
 };
 
 addEntry('boat', 'goes on the sea');
@@ -32,21 +38,24 @@ console.log(dictionary);
 
 //////////////////////////////////////////////////
 // 3. Implement a new function getEntry to return
-//    and entry given the word
+//    and entry given a new word
 //    It should return both the word and
 //    definition.
 //////////////////////////////////////////////////
 
-const getEntry = (entry: string) => {
+const getEntry = (entry: Entry): [Entry, Definition] | undefined => {
   if (!entry) {
     return;
   }
-  if (!dictionary[entry]) {
+
+  const definition = dictionary[entry];
+
+  if (!definition) {
     console.error(`Entry "${entry}" not found in the dictionary.`);
     return;
   }
 
-  return [entry, dictionary[entry]];
+  return [entry, definition];
 };
 
 console.log(getEntry('boat'));
@@ -58,7 +67,7 @@ console.log(getEntry('boat'));
 //    string. It must be case insensitive.
 //////////////////////////////////////////////////
 
-const startsWith = (str: string) => {
+const startsWith = (str: string): Dictionary => {
   if (!str) {
     return {};
   }
@@ -94,21 +103,23 @@ console.log(startsWith('b'));
 //    }
 //////////////////////////////////////////////////
 
-const groupByLength = () => {
-  const groupedDictionaryByLength: GroupedDictionary = {};
+const groupByLength = (): GroupedDictionaryEntriesByLength => {
+  const groupedDictionaryEntriesByLength: GroupedDictionaryEntriesByLength = {};
 
   for (const entry in dictionary) {
     const length = entry.length;
 
-    if (!groupedDictionaryByLength[length]) {
-      groupedDictionaryByLength[length] = [entry];
+    const lengthIsAlreadyInGroupedDictionaryEntriesByLength = groupedDictionaryEntriesByLength[length];
+
+    if (!lengthIsAlreadyInGroupedDictionaryEntriesByLength) {
+      groupedDictionaryEntriesByLength[length] = [entry];
       continue;
     }
 
-    groupedDictionaryByLength[length].push(entry);
+    groupedDictionaryEntriesByLength[length].push(entry);
   }
 
-  return groupedDictionaryByLength;
+  return groupedDictionaryEntriesByLength;
 };
 
 console.log(groupByLength());
