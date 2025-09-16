@@ -23,3 +23,8 @@ export const countDupes = (cities: string[]): number => {
   // lista dada.
 };
 ```
+
+## Código
+
+[count-dupes.ts](./count-dupes.ts)
+[count-dupes.test.ts](./count-dupes.test.ts)

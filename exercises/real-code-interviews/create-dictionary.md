@@ -13,3 +13,7 @@
     "5": ["Bruno"],
   }
 ```
+
+## Código
+
+[create-dictionary.ts](./create-dictionary.ts)
