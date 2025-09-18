@@ -1,13 +1,14 @@
 # 💎 S - Responsabilidad única
 
-El propio nombre sugiere que la *“clase debe tener una y solo una responsabilidad”*.
+*Una clase debería tener una, y sólo una, razón para cambiar.*
+
+Si nuestras clases asumen **múltiples responsabilidades**, estarán **muy fuertemente acopladas, lo que las hará más difíciles de mantener**.
+
+Esto también puede considerarse la definición de [Separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns).
 
 ## ❌ Ejemplo erróneo
 
-La clase debe tener una responsabilidad en este caso
-solo construir un coche con sus características pero no
-tener ningún método de registro en la consola, esto debería ser otra
-responsabilidad.
+La clase debe tener una responsabilidad en este caso, solo construir un coche con sus características pero no tener ningún método de registro en la consola, esto debería ser otra responsabilidad.
 
 ```ts
 export class CarWrong {

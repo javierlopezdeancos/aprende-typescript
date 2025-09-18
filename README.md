@@ -89,6 +89,7 @@
       - [Contar duplicados](exercises/real-code-interviews/count-dupes.md)
       - [Crear un diccionario](exercises/real-code-interviews/create-dictionary.md)
       - [Perder el contexto](exercises/real-code-interviews/lose-context.ts)
+      - [Manipular fetch](exercises/real-code-interviews/manipulate-fetch.md)
 
 ## Instala el entorno
 
