@@ -22,16 +22,16 @@
       - [Publicador-suscriptor (Publisher-Subscriber)](patterns/behavioral/publisher-subscriber.md)
       - [Estrategia (Strategy)](patterns/behavioral/strategy.md)
     - Estructurales
-      - [Compuesto (Composite))](patterns/structural/composite.md)
+      - [Compuesto (Composite)](patterns/structural/composite.md)
       - [Decorador (Decorator)](patterns/structural/decorator.md)
       - [Fachada (Facade)](patterns/structural/facade.md)
       - [Peso ligero (Flyweight)](patterns/structural/flyweight.md)
       - [Proxy (Proxy)](patterns/structural/proxy.md)
     - Creacionales
       - [Constructor (Constructor)](patterns/creational/builder.md)
-      - [Fábrica (Factory))](patterns/creational/factory.md)
-      - [Prototipo (Prototype))](patterns/creational/prototype.md)
-      - [Instancia única (Singleton))](patterns/creational/singleton.md)
+      - [Fábrica (Factory)](patterns/creational/factory.md)
+      - [Prototipo (Prototype)](patterns/creational/prototype.md)
+      - [Instancia única (Singleton)](patterns/creational/singleton.md)
   - Ejercicios
     - Algorithms
       - Linked List
